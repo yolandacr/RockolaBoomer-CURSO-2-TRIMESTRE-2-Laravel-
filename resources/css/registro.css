@@ -52,17 +52,8 @@ text-transform: uppercase;
   border-color:#76118a;
 }
 
-.error{
+small{
   color:red;
-  display:none;
-}
-
-#text{
-  resize:none;
-}
-
-#advice{
-  font-size: 0.5rem;
 }
 
 

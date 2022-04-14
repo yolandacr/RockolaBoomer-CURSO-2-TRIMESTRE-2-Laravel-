@@ -43,3 +43,9 @@ body {
     text-align: center;
   }
 
+  h1{
+    color: rgb(201, 118, 212);
+    text-shadow: 0 0 80px rgba(104, 26, 78, 0.877);
+    text-transform: uppercase;
+  }
+

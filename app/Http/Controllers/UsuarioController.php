@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistroRequest;
 use App\Models\Usuario;
-
 use Illuminate\Support\Facades\Hash;
-
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -17,7 +16,6 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -36,23 +34,16 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistroRequest $request)
     {
-
-        $this->validate($request, [
-            'nombre' => 'required',
-            'clave' => 'required'
-            ]);
-
-        $usuario = new Usuario;
-        $usuario->nombre=$request->nombre;
-
+    $usuario = new Usuario;
+        $usuario->nombre = $request->nombre;
         $claveHash = Hash::make($request->clave);
-        $usuario->clave=$claveHash;
+        $usuario->clave = $claveHash;
         $usuario->save();
-        
-        
-        return redirect()->back() ->with('alert', 'Usuario registrado con éxito');
+
+
+        return redirect()->back()->with('alert', 'Usuario registrado con éxito');
     }
 
     /**

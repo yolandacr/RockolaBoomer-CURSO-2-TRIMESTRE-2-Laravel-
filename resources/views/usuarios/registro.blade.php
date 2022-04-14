@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Formulario de registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{asset('../resources/css/registro.css')}}" rel="stylesheet" />
 
 
@@ -20,26 +21,26 @@
         <h1 id="titulo">Registro</h1>
     </header>
 
-
+ 
     <main>
         <div class="container" id="formulario">
             <form action="/rockola/public/usuarios" method="POST" name="registro" id="registro">
+                @csrf
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Usuario:</label>
-                    <input type="text" class="form-control" id="usuario" name="nombre">
-                    {{csrf_field()}}
-                    <span class="error" id="nombre">*El usuario no es válido</span>
-
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
+                    {!!$errors->first('nombre','<small>:message</small>')!!}
                 </div>
 
                 <div class="mb-3">
                     <label for="pass" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="pass" name="clave"><span id="advice">*La contraseña ha de contener entre 8 y 16 caracteres</span>
-                    {{csrf_field()}}
-                    <span class="error" id="clave">*La contraseña no es válida</span>
+                    <input type="password" class="form-control" name="clave" placeholder="Contraseña" value="{{old('clave')}}">
+                    {!!$errors->first('clave','<small>:message</small>')!!}
+
+
                 </div>
 
-                <button type="submit" class="btn btn-primary" id="boton" disabled="true" name="boton">Registrar</button>
+                <button type="submit" class="btn btn-primary" id="boton" name="boton">Registrar</button>
 
             </form>
             <br><br>
@@ -61,10 +62,8 @@
     </script>
 
 
-
-    <script type="text/javascript" src="{{ URL::asset('../resources/js/validacion.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 </body>
 
