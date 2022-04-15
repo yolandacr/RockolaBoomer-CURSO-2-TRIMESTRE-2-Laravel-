@@ -1,45 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\RegistroRequest;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class UsuarioController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * metodo que lleva a la pagina de registro
      */
-    public function index()
-    {
+    public function register(){
+        return view('users/register');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('usuarios/registro');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * metodo que guarda el registro en db
      */
     public function store(RegistroRequest $request)
     {
-    $usuario = new Usuario;
+        $usuario = new Usuario;
         $usuario->nombre = $request->nombre;
         $claveHash = Hash::make($request->clave);
         $usuario->clave = $claveHash;
+        //$usuario->clave =$request->clave;
         $usuario->save();
 
 
@@ -47,47 +35,34 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * metodo que devuelve la vista del login
      */
-    public function show($id)
-    {
-        //
+
+    public function login(){
+        return view('users/login');
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * metodo para autentificar
      */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function authenticate(Request $request)
     {
-        //
-    }
+        $credentials = $request->validate([
+            'nombre' => ['required'],
+            'clave' => ['required'],
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('modo');
+        }
+ 
+        return back()->withErrors([
+            'nombre' => 'El usuario o clave son incorrectos',
+        ])->onlyInput('nombre');
+    } 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }

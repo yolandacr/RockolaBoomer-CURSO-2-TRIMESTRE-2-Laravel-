@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\UsuarioController;
 
 /*
@@ -14,23 +17,14 @@ use App\Http\Controllers\UsuarioController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', HomeController::class);
+Route::get('/index', HomeController::class);
 
-Route::get('/cookies', function () {
-    return view('web/cookies');
-});
+Route::get('cookies', [PageController::class,'cookies']);
+Route::get('info', [PageController::class,'about']);
 
-Route::get('/index', function () {
-    return view('/index');
-});
+Route::get('registro', [UsuarioController::class,'register']);
+Route::post('registro', [UsuarioController::class,'store']);
 
-
-Route::get('/info', function () {
-    return view('web/info');
-});
-
-
-
-Route::resource('usuarios', UsuarioController::class);
+Route::get('login', [UsuarioController::class,'login']);
+Route::post('login', [UsuarioController::class,'authenticate']);

@@ -28,7 +28,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../resources/css/main.css" />
+  <link rel="stylesheet" href="css/main.css" />
   <title>Home</title>
 </head>
 
@@ -64,8 +64,8 @@
 
     <!-- BOTONES -->
     <div class="container">
-      <p><button type="button" class="btn btn-dark" href="User/login">LOGIN</button></p>
-      <p><button type="button" class="btn btn-dark"><a href="usuarios/create">REGISTRO</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="login">LOGIN</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="registro">REGISTRO</a></button></p>
       <p> <button type="button" class="btn btn-dark" href="ranking">RANKING</button></p>
       <p><button type="button" class="btn btn-dark"><a href="info">+ INFO</a></button></p>
     </div>
@@ -77,7 +77,6 @@
       <h3 class="titulo">Cookies</h3>
       <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
       <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
-      <!-- <a class="enlace" href="cookies.blade.php">Aviso de Cookies</a> -->
       <a class="enlace" href="cookies">Aviso de Cookies</a>
     </div>
 
@@ -87,7 +86,7 @@
 
 
 
-    <script src="../resources/js/aviso-cookies.js"></script>
+    <script src="js/aviso-cookies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 </body>
