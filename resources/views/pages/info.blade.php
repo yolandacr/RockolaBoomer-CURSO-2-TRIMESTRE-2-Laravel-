@@ -20,7 +20,7 @@
    </header>
    <main>
       <div class="container">
-         <img class="autora" src="../resources/img/curriculum.png" alt="Yolanda Cordero Robledo">
+         <img class="autora" src="img/curriculum.png" alt="Yolanda Cordero Robledo">
          ¡Hola a todos! Mi nombre es Yolanda Cordero Robledo y soy la creadora de este juego/web, Rockola Boomer, que ha surgido
          como resultado de mi proyecto final del ciclo formativo en Desarrollo de Aplicaciones Web del curso 2021-2022.<br>
 

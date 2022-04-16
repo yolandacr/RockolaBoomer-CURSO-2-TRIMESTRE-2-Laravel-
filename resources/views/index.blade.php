@@ -43,8 +43,8 @@
 
 
     <audio controls>
-      <source src="../resources/music/intro.mp3" type="audio/mpeg">
-      <source src="../resources/music/intro.wav" type="audio/wav">
+      <source src="music/intro.mp3" type="audio/mpeg">
+      <source src="music/intro.wav" type="audio/wav">
       Tu navegador no es compatible con el audio de la web
     </audio>
 
@@ -66,7 +66,7 @@
     <div class="container">
       <p><button type="button" class="btn btn-dark"><a href="login">LOGIN</a></button></p>
       <p><button type="button" class="btn btn-dark"><a href="registro">REGISTRO</a></button></p>
-      <p> <button type="button" class="btn btn-dark" href="ranking">RANKING</button></p>
+      <p><button type="button" class="btn btn-dark"><a href="ranking">RANKING</a></button></p>
       <p><button type="button" class="btn btn-dark"><a href="info">+ INFO</a></button></p>
     </div>
 
@@ -85,7 +85,13 @@
 
 
 
-
+    <script>
+      var msg = '{{Session::get("alert")}}';
+      var exist = '{{Session::has("alert")}}';
+      if (exist) {
+          alert(msg);
+      }
+  </script>
     <script src="js/aviso-cookies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>

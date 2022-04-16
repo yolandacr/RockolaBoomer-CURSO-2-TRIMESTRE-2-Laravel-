@@ -31,7 +31,7 @@ class UsuarioController extends Controller
         $usuario->save();
 
 
-        return redirect()->back()->with('alert', 'Usuario registrado con éxito');
+        return redirect('index')->with('alert', 'Usuario registrado con éxito');
     }
 
     /**
