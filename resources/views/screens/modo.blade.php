@@ -18,9 +18,36 @@
       <h1>Elige un Modo de Juego</h1>
    </header>
    <main>
-    <button type="button" class="btn btn-primary"><a href="categoria">FÁCIL</a></button><br>
+   
 
-    <button type="button" class="btn btn-primary" disabled="true">DIFÍCIL<br><span>-Próximamente-<span></button>
+
+      {{-- BOTON 1 --}}
+
+      <div class="container">
+         <div class="center">
+           <button class="btn" onclick="location.href='categoria'">
+             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+             </svg>
+             <span>FACIL</span>
+           </button>
+         </div>
+       </div><br>
+
+
+       {{-- BOTON 2 --}}
+       <div class="container" id="dificil" disabled="true">
+         <div class="center">
+           <button class="btn">
+             {{-- <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+             </svg> --}}
+             <span>DIFICIL<br><span>-Próximamente-<span></span>
+           </button>
+         </div>
+       </div>
     
    </main>
 </body>
