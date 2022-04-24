@@ -13,12 +13,16 @@
 </head>
 
 <body>
-
+   <div class="container" >
+   
    <header>
+      <div class="row text-center mx-auto">
       <h1>Ranking de Honor</h1>
+   </div>
    </header>
    <main>
-     <table class="table table-dark table-striped">
+      <div class="row mx-auto">
+      <table class="table table-dark table-striped" style="margin-top:12%;">
          <tr>
            <th>Nombre</th>
            <th>Total de Puntos</th>
@@ -30,11 +34,15 @@
          </tr>
         @endforeach</td>
        </table>
+      </div>
    </main>
 
    <footer>
-      <div class="container"><a href="index">ATRÁS</a></div>
+      <div class="row text-center mx-auto" style="margin-top:-7%;">
+      <a href="index">ATRÁS</a>
+   </div>
    </footer>
+</div>
 </body>
 
 </html>

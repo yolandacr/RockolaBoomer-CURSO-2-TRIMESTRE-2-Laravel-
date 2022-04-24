@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('opciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('nombre_cancion');
+            $table->bigInteger('id_cancion');
             $table->timestamps();
         });
     }

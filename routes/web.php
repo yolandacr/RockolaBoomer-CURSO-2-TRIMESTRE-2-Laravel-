@@ -33,6 +33,7 @@ Route::post('login', [UsuarioController::class,'authenticate']);
 
 Route::get('modo', [GameController::class,'level']);
 Route::get('categoria', [GameController::class,'categoria']);
+Route::get('facil', [GameController::class,'facil']);
 
 
 

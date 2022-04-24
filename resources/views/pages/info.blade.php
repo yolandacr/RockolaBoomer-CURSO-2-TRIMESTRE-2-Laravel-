@@ -14,13 +14,24 @@
 </head>
 
 <body>
+   <div class="container mx-auto" >
+  <div class="row text-center mx-auto">
+     <div class="col-sm-12">
+      <header>
+         <h1>+ INFO</h1>
+      </header>
+     </div>
+   
+  </div>
+   
 
-   <header>
-      <h1>+ INFO</h1>
-   </header>
+  
    <main>
-      <div class="container">
-         <img class="autora" src="img/curriculum.png" alt="Yolanda Cordero Robledo">
+      <div class="row mx-auto"  id="principal">
+      <div class="col-sm-2 ">
+         <img class="img-fluid" src="img/curriculum.png" alt="Yolanda Cordero Robledo">
+      </div>
+      <div class="col-sm-6 mx-auto" id="texto">
          ¡Hola a todos! Mi nombre es Yolanda Cordero Robledo y soy la creadora de este juego/web, Rockola Boomer, que ha surgido
          como resultado de mi proyecto final del ciclo formativo en Desarrollo de Aplicaciones Web del curso 2021-2022.<br>
 
@@ -29,14 +40,21 @@
 
          ¡Espero que disfrutéis del juego tanto como yo lo he hecho programándolo!
       </div>
-
-
-
+   </div>
    </main>
 
+
+
+
+
+<div class="row text-center mx-auto">
+   <div class="col-sm-12">
    <footer>
-      <div class="container"><a href="index">ATRÁS</a></div>
+      <a href="index">ATRÁS</a>
    </footer>
+</div>
+</div>
+</div>
 </body>
 
 </html>

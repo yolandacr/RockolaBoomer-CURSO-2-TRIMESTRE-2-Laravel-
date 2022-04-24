@@ -1,43 +1,25 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
 
-html{
-  height: 100%;
-}
 body {
   font: 400 1em/1.5 "Neuton";
   background: #090d00;
   color:rgba(252, 252, 252, 0.788);
-  text-align:center;
-  min-height: 100vh;
-  width: 100%;
   overflow: auto;
   overflow-x: hidden;
 }
 
 #titulo{
-  margin-top:5%;
-  margin-bottom: 10%;
+
   color: rgb(201, 118, 212);
   text-shadow: 0 0 80px rgba(104, 26, 78, 0.877);
-  height:10%;
   text-transform: uppercase;
 }
 
 /* FORMULARIO */
-.container{
-top: 40%; 
-margin-left:auto;
-margin-right: auto;
+form{
 text-transform: uppercase;
+
 }
 
-#formulario{
-  width: 20%; 
-}
 
 .btn-primary {
   text-transform: uppercase;
@@ -54,71 +36,38 @@ text-transform: uppercase;
 
 small{
   color:red;
+  font-size: 0.5rem;
 }
 
-
-
-@media only screen and (min-device-width : 270px) and (max-device-width : 480px)and (orientation: portrait) {
-  body{
-       font-size: 0.55rem;
-       
-   }
-
-   #titulo{
-     margin-bottom: 15%;}
-
-   .container{
-    font-size: 1.5rem;
-  }
-
-  #formulario{
-    width: 100%;
-    height:100%;
-  }
-   
-
-  
-  
- }
- 
- 
- @media only screen and (min-device-width: 300px) and (max-device-width: 1024px) and (orientation: landscape) {
-   body{
-     font-size: 0.3rem;
-     overflow: auto;
-     overflow-y: scroll;
-     overflow-x: hidden;
-    
- }
- 
- 
- .container{
-   top:40%;
-   font-size: 1rem;
-   width:100%;
-  
- 
- }
- 
- #formulario{
-   width:50%;
-   height:50%;
-   right: 25%;
-   font-size: 1rem;
-   top:90%;
-   margin-bottom: 5%;
-   
- }
- 
- .form-control{
-   font-size: 1rem;
- }
-
-
-
-.btn-primary {
-  margin-bottom: 5%;
+#filaTitulo{
+  margin-top:5%;
 }
 
+#filaForm{
+  color:#ac4295;
+  background-color: #090d00;
+  width: 50%;
+  padding: 2%;
+  border-radius: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+ 
+  
+}
+#filaCont{
+  margin-top: 2%;
+  background-image: url("../img/imagenFondo.jpg"); 
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10%;
+  
+}
 
- }
+button{
+  margin-top:3%;
+}
+
+#filaFooter{
+margin-top: 4%;
+}

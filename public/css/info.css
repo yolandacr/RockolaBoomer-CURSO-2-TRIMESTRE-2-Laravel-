@@ -1,51 +1,23 @@
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-html{
-  height: 100%;
-}
-
-
-body {
+    body {
     font: 400 1em/1.5 "Neuton";
     background: #090d00;
     color:rgba(252, 252, 252, 0.938);
     text-align:justify;
-    box-sizing: border-box;
-    min-height: 100vh;
-    width: 100vw;
-    margin:0;
-    padding:0;
     overflow: auto;
-  }
+    }
 
-  h1 {
-    text-align: center;
-    margin-top: 5%;
-  }
-  img{
-    height: 10vw;
-    width: 9vw;
-    float:left;
-    margin-right:10%;
-  }
-
-  main{
-    margin-top:10%;
-  }
-
-  footer{
-    margin-top:10%;
-    text-align: center;
-  }
-
-  h1{
+    header{
     color: rgb(201, 118, 212);
-    text-shadow: 0 0 80px rgba(104, 26, 78, 0.877);
-    text-transform: uppercase;
-  }
+    margin-top: 5%;
+    }
 
+    #principal{
+    margin-top: 10%;
+    }
+
+    footer{
+    margin-top:20%;
+    }
+    #texto{
+    padding: 3%;
+    }

@@ -13,9 +13,13 @@
 </head>
 
 <body>
-
+  <div class="container">
    <header>
+    <div class="row text-center mx-auto">
+      <div class="col-sm-12">
       <h1>Elige un Modo de Juego</h1>
+    </div>
+  </div>
    </header>
    <main>
    
@@ -23,33 +27,32 @@
 
       {{-- BOTON 1 --}}
 
-      <div class="container">
-         <div class="center">
-           <button class="btn" onclick="location.href='categoria'">
-             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-             </svg>
-             <span>FACIL</span>
-           </button>
-         </div>
-       </div><br>
+      <div class="row text-center">
+        <div class="col-sm-12">
+        <button type="button" class="btn btn-dark" id="facil"><a href="facil" onclick="guardarModo('facil')">Fácil</a></button>
+        </div>  </div>
 
 
        {{-- BOTON 2 --}}
-       <div class="container" id="dificil" disabled="true">
-         <div class="center">
-           <button class="btn">
-             {{-- <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-             </svg> --}}
-             <span>DIFICIL<br><span>-Próximamente-<span></span>
-           </button>
-         </div>
-       </div>
+       
+       <div class="row text-center">
+        <div class="col-sm-12">
+        <button type="button" class="btn btn-dark" disabled="true" id="dificil" onclick="guardarModo('dificil')">Difícil<br>-Próximamente-</button>
+      </div></div>
     
    </main>
+   <footer>
+    <div class="row text-center mx-auto">
+      <div class="col-sm-12">
+        <footer>
+           <a href="categoria">ATRÁS</a>
+        </footer>
+     </div>
+    </div>
+   </footer>
+  </div>
+
+  <script src="js/juego.js"></script>
 </body>
 
 </html>

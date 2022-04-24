@@ -12,10 +12,11 @@
 
 </head>
 
-<body>
+<body >
 
    <header>
       <h1>Elige un Modo de Juego</h1>
+      
    </header>
    <main>
       <div class="container">
@@ -25,7 +26,7 @@
                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
              </svg>
-             <span>AÑOS 80</span>
+             <span><a href="modo">AÑOS 80</a></span>
            </button>
          </div>
        </div>
@@ -62,6 +63,13 @@
        </div>
       
    </main>
+   <footer>
+    <div class="row text-center mx-auto">
+      <div class="col-sm-12">
+        <footer>
+           <a href="modo">ATRÁS</a>
+        </footer>
+   <script src="js/juego.js"></script>
 </body>
 
 </html>
