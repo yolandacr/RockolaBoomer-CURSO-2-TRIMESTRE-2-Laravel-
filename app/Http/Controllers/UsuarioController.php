@@ -27,7 +27,6 @@ class UsuarioController extends Controller
         $usuario->nombre = $request->nombre;
         $claveHash = Hash::make($request->clave);
         $usuario->clave = $claveHash;
-        //$usuario->clave =$request->clave;
         $usuario->save();
 
 
@@ -56,7 +55,7 @@ class UsuarioController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('modo');
+            return redirect()->intended('categoria');
         }
  
         return back()->withErrors([
