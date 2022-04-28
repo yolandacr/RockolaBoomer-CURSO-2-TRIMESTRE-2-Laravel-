@@ -23,7 +23,7 @@ function guardaUsuario(){
 }
 
 function irModo(categoria){
-            localStorage.setItem("categoria",'"'+categoria+'"');
+            localStorage.setItem("categoria",categoria);
             window.open("modo","_self")
     }
 
