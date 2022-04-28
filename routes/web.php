@@ -33,7 +33,7 @@ Route::post('login', [UsuarioController::class,'authenticate'])->name('users.aut
 
 Route::get('modo', [GameController::class,'level'])->name('screens.modo');
 Route::get('categoria', [GameController::class,'categoria'])->name('screens.categoria');
-Route::get('facil/{categoria}', [GameController::class,'facil'])->name('screens.facil');
+Route::get('facil', [GameController::class,'facil'])->name('screens.facil');
 
 
 

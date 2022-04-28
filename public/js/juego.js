@@ -27,10 +27,6 @@ function irModo(categoria){
             window.open("modo","_self")
     }
 
-   
-   
- 
-
  function recuperaCategoria(){
   localStorage.getItem('categoria');
  }

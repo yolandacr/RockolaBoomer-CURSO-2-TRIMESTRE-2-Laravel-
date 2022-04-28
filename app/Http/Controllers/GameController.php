@@ -16,11 +16,11 @@ class GameController extends Controller
         return view('screens/categoria');
     }
 
-    public function facil($categoria){
-        $canciones = new Cancion();
+    public function facil(){
+      /*   $canciones = new Cancion();
         $canciones = Cancion::where('categoria',$categoria);
-        return $canciones;
-        // return view('screens/facil');
+        return $canciones; */
+        return view('screens/facil');
     }
 
     

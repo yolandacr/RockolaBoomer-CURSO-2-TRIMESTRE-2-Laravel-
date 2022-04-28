@@ -22,26 +22,26 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 </div>
 {{-- FORMULARIO --}}
 <div class="row text-center mx-auto"id="filaCont">
-<div class="row text-center mx-auto"id="filaForm">
-<div class="col-sm-5 text-center mx-auto">
-<main>
-    <form action="{{route('users.authenticate')}}" method="POST" name="login" id="login">
-@csrf
-<div class="mb-3">
-<label for="usuario" class="form-label">Usuario:</label>
-<input type="text" class="form-control" name="nombre" id="usuario" placeholder="Nombre" value="{{old('nombre')}}">
-{!!$errors->first('nombre','<small>:message</small>')!!}
-</div>
-<div class="mb-3">
-<label for="pass" class="form-label">Contraseña:</label>
-<input type="password" class="form-control" name="clave" placeholder="Contraseña" value="{{old('clave')}}">
-{!!$errors->first('clave','<small>:message</small>')!!}
-</div>
-<button type="submit" class="btn btn-primary" id="boton" name="boton" onclick="guardaUsuario()">Acceder</button>
-</form>
-</main>
-</div>
-</div>
+    <div class="row text-center mx-auto"id="filaForm">
+        <div class="col-sm-5 text-center mx-auto">
+        <main>
+        <form action="{{route('users.authenticate')}}" method="POST" name="login" id="login">
+        @csrf
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" name="nombre" id="usuario" placeholder="Nombre" value="{{old('nombre')}}">
+                    {!!$errors->first('nombre','<small>:message</small>')!!}
+            </div>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" name="clave" placeholder="Contraseña" value="{{old('clave')}}">
+                    {!!$errors->first('clave','<small>:message</small>')!!}
+            </div>
+            <button type="submit" class="btn btn-primary" id="boton" name="boton" onclick="guardaUsuario()">Acceder</button>
+        </form>
+        </main>
+        </div>
+    </div>
 </div>
 
 {{-- FOOTER --}}
