@@ -64,10 +64,10 @@
 
     <!-- BOTONES -->
     <div class="container">
-      <p><button type="button" class="btn btn-dark"><a href="login">LOGIN</a></button></p>
-      <p><button type="button" class="btn btn-dark"><a href="registro">REGISTRO</a></button></p>
-      <p><button type="button" class="btn btn-dark"><a href="ranking">RANKING</a></button></p>
-      <p><button type="button" class="btn btn-dark"><a href="info">+ INFO</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="{{route('users.login')}}">LOGIN</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="{{route('users.register')}}">REGISTRO</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="{{route('pages.ranking')}}">RANKING</a></button></p>
+      <p><button type="button" class="btn btn-dark"><a href="{{route('pages.info')}}">+ INFO</a></button></p>
     </div>
 
 
@@ -77,7 +77,7 @@
       <h3 class="titulo">Cookies</h3>
       <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
       <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
-      <a class="enlace" href="cookies">Aviso de Cookies</a>
+      <a class="enlace" href="{{route('pages.cookies')}}">Aviso de Cookies</a>
     </div>
 
     <!-- fondo para que no se interactue con lo ue ha detras. Ventana Modal cookies-->

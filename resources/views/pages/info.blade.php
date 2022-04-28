@@ -50,7 +50,7 @@
 <div class="row text-center mx-auto">
    <div class="col-sm-12">
    <footer>
-      <a href="index">ATRÁS</a>
+      <a href="{{route('home')}}">ATRÁS</a>
    </footer>
 </div>
 </div>

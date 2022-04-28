@@ -45,7 +45,7 @@
     <div class="row text-center mx-auto">
       <div class="col-sm-12">
         <footer>
-           <a href="categoria">ATRÁS</a>
+          <a href="{{route('screens.categoria')}}">ATRÁS</a>
         </footer>
      </div>
     </div>

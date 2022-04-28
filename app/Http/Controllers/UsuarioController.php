@@ -55,7 +55,7 @@ class UsuarioController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('categoria');
+            return redirect()->route('screens.categoria');
         }
  
         return back()->withErrors([

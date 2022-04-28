@@ -54,7 +54,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <div class="row text-center mx-auto" id="filaFooter">
 <div class="col-sm-12">
 <footer>
-<p><a href="modo">ATRÁS</a></p>
+<p><a href="{{route('home')}}">ATRÁS</a>></p>
 </footer>
 </div>
 </div>

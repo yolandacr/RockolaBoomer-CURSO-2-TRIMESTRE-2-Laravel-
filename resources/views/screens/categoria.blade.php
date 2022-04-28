@@ -15,18 +15,18 @@
 <body >
 
    <header>
-      <h1>Elige un Modo de Juego</h1>
+      <h1>Elige una Categoría</h1>
       
    </header>
    <main>
       <div class="container">
          <div class="center">
-           <button class="btn">
+           <button class="btn" onclick="irModo('años80')">
              <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
              </svg>
-             <span><a href="modo">AÑOS 80</a></span>
+             <span style= "color:white" >AÑOS 80<br></span>
            </button>
          </div>
        </div>
@@ -35,8 +35,8 @@
    {{--     {{-- BOTON 2 --}}
      <div class="container" id="a90" disabled="true">
          <div class="center">
-           <button class="btn">
-             <span>AÑOS 90<br><span>-Próximamente-<span></span>
+           <button class="btn" onclick="guardarCategoria('años90')">
+              <span style= "color:white" >AÑOS 90<br><span>-Próximamente-<span></span>
            </button>
          </div>
        </div>
@@ -45,9 +45,9 @@
      
      <div class="container" id="a2000" disabled="true">
          <div class="center">
-           <button class="btn" >
+           <button class="btn" onclick="guardarCategoria('años2000')">
            
-             <span>AÑOS 2000</span>
+           <span style= "color:white" >AÑOS 2000<br><span>-Próximamente-<span></span>
            </button>
          </div>
        </div>
@@ -56,8 +56,8 @@
        {{-- BOTON 4 --}}
    <div class="container" id="actualidad" disabled="true">
          <div class="center">
-           <button class="btn">
-             <span>ACTUALIDAD<br><span>-Próximamente-<span></span>
+           <button class="btn" onclick="guardarCategoria('actualidad')">
+             <span style= "color:white" >ACTUALIDAD<br><span>-Próximamente-<span></span>
            </button>
          </div>
        </div>
@@ -67,7 +67,7 @@
     <div class="row text-center mx-auto">
       <div class="col-sm-12">
         <footer>
-           <a href="modo">ATRÁS</a>
+          <a href="{{route('users.login')}}">ATRÁS</a>
         </footer>
    <script src="js/juego.js"></script>
 </body>

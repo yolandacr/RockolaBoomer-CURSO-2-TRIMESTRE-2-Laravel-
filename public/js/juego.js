@@ -7,10 +7,11 @@ var modo;
 function guardarModo(string){
 if(string=='facil'){
     localStorage.setItem("modo",'facil');
-    alert('Guardado en modo facil');
+    window.open("facil","_self")
+    
 }else{
     localStorage.setItem("modo",'dificil');
-    alert('Guardado en modo dificil'); 
+    
 }
 }
 
@@ -20,6 +21,19 @@ function guardaUsuario(){
    localStorage.setItem("jugador",jugador);
    localStorage.setItem("puntos",puntos);
 }
+
+function irModo(categoria){
+            localStorage.setItem("categoria",'"'+categoria+'"');
+            window.open("modo","_self")
+    }
+
+   
+   
+ 
+
+ function recuperaCategoria(){
+  localStorage.getItem('categoria');
+ }
 
 function imprimeUsuario(){
     var jugador=localStorage.getItem('jugador');

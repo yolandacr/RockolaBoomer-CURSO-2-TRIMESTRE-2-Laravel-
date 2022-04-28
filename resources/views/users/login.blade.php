@@ -25,7 +25,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <div class="row text-center mx-auto"id="filaForm">
 <div class="col-sm-5 text-center mx-auto">
 <main>
-    <form action="login" method="POST" name="login" id="login">
+    <form action="{{route('users.authenticate')}}" method="POST" name="login" id="login">
 @csrf
 <div class="mb-3">
 <label for="usuario" class="form-label">Usuario:</label>
@@ -48,7 +48,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <div class="row text-center mx-auto"id="filaFooter"></div>
 <div class="col-sm-12">
 <footer>
-<p><a href="index">ATRÁS</a></p>
+    <a href="{{route('home')}}">ATRÁS</a>
 </footer>
 </div>
 </div>

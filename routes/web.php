@@ -17,23 +17,23 @@ use App\Http\Controllers\GameController;
 |
 */
 
-Route::get('/', HomeController::class);
-Route::get('/index', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
+Route::get('/index', HomeController::class)->name('index');
 
-Route::get('cookies', [PageController::class,'cookies']);
-Route::get('info', [PageController::class,'about']);
-Route::get('ranking', [PageController::class,'ranking']);
+Route::get('cookies', [PageController::class,'cookies'])->name('pages.cookies');
+Route::get('info', [PageController::class,'about'])->name('pages.info');
+Route::get('ranking', [PageController::class,'ranking'])->name('pages.ranking');
 
 
-Route::get('registro', [UsuarioController::class,'register']);
-Route::post('registro', [UsuarioController::class,'store']);
+Route::get('registro', [UsuarioController::class,'register'])->name('users.register');
+Route::post('registro', [UsuarioController::class,'store'])->name('users.store');
 
-Route::get('login', [UsuarioController::class,'login']);
-Route::post('login', [UsuarioController::class,'authenticate']);
+Route::get('login', [UsuarioController::class,'login'])->name('users.login');
+Route::post('login', [UsuarioController::class,'authenticate'])->name('users.authenticate');
 
-Route::get('modo', [GameController::class,'level']);
-Route::get('categoria', [GameController::class,'categoria']);
-Route::get('facil', [GameController::class,'facil']);
+Route::get('modo', [GameController::class,'level'])->name('screens.modo');
+Route::get('categoria', [GameController::class,'categoria'])->name('screens.categoria');
+Route::get('facil/{categoria}', [GameController::class,'facil'])->name('screens.facil');
 
 
 

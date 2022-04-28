@@ -47,7 +47,7 @@
     <div class="row text-center mx-auto"id="filaFooter"></div>
     <div class="col-sm-12">
     <footer>
-    <p><a href="index">ATRÁS</a></p>
+        <a href="{{route('home')}}">ATRÁS</a>
     </footer>
     </div>
     </div>

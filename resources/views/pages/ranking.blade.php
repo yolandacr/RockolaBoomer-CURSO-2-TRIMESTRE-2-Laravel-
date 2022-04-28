@@ -39,7 +39,7 @@
 
    <footer>
       <div class="row text-center mx-auto" style="margin-top:-7%;">
-      <a href="index">ATRÁS</a>
+         <a href="{{route('home')}}">ATRÁS</a>
    </div>
    </footer>
 </div>

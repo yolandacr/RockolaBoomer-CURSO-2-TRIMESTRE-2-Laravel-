@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cancion;
 
 class GameController extends Controller
 {
@@ -15,18 +16,19 @@ class GameController extends Controller
         return view('screens/categoria');
     }
 
-    public function facil(){
-        return view('screens/facil');
+    public function facil($categoria){
+        $canciones = new Cancion();
+        $canciones = Cancion::where('categoria',$categoria);
+        return $canciones;
+        // return view('screens/facil');
     }
 
-    /**
-     * incompleta, preguntar a alejandra
-     */
-    public function arrayCanciones(){
-        $canciones = DB::table('canciones')->where('categoria', 'años80')->get();
+    
+
+
        
         
 
        
-    }
+    
 }
