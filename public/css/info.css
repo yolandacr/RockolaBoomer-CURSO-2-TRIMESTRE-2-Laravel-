@@ -19,5 +19,9 @@
     margin-top:20%;
     }
     #texto{
+    margin-top:1%;
     padding: 3%;
+    border:solid;
+    border-radius: 20px;
+    border-color: blueviolet;
     }
