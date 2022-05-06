@@ -203,9 +203,7 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
-    .navbar {
-        font-size: 1.5rem;
-    }
+   
     audio {
         width: 90vw;
     }
@@ -216,8 +214,9 @@ a:hover {
         margin-top: 7vh;
     }
     .container {
-        margin-top: 50vh;
+        margin-top: 80vh;
         font-size: 1.5rem;
+        padding-bottom: 2%;
     }
     #formulario {
         width: 50%;

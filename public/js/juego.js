@@ -4,6 +4,9 @@ var fecha;
 var modo;
 
 
+// ESTA PARTE ES DE FUNCIONES QUE GUARDAN Y RECUPERAN DEL LOCALSTORAGE
+
+
 function guardarModo(string){
 if(string=='facil'){
     localStorage.setItem("modo",'facil');
@@ -12,7 +15,7 @@ if(string=='facil'){
 }else{
     localStorage.setItem("modo",'dificil');
     
-}
+    }
 }
 
 function guardaUsuario(){
@@ -25,7 +28,7 @@ function guardaUsuario(){
 function irModo(categoria){
             localStorage.setItem("categoria",categoria);
             window.open("modo","_self")
-    }
+                        }
 
  function recuperaCategoria(){
   localStorage.getItem('categoria');
@@ -38,5 +41,9 @@ function imprimeUsuario(){
     document.getElementById('campoPuntos').innerHTML=puntos;
     
     
+}
+
+function traerCategoria(){
+    let categoria = localStorage.getItem('categoria');
 }
 

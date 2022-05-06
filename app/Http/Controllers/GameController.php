@@ -16,10 +16,13 @@ class GameController extends Controller
         return view('screens/categoria');
     }
 
+    //aqui estoy atrancada, no se como plantearlo
+
     public function facil(){
-      /*   $canciones = new Cancion();
-        $canciones = Cancion::where('categoria',$categoria);
-        return $canciones; */
+        
+      
+        // $arrayCanciones = Cancion::where('categoria',$categoria);
+        /*return $canciones; */
         return view('screens/facil');
     }
 

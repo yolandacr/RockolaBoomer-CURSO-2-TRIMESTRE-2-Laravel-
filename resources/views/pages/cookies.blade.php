@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/cookies.css" />
 </head>
 <body>
-
+    <div class="container" >
 	<div class="row text-center mx-auto">
     <div class="col-sm-12 text-center mx-auto">
     <header>
@@ -22,9 +22,9 @@
 
 	
 
-	<main>
+	<main style="border:solid;border-radius: 20px;border-color: blueviolet;margin-top:3%; margin-bottom:3%;">
 		<div class="row mx-auto" >
-			<div class="col-sm-5 text-justify mx-auto">
+			<div class="col-sm-12 text-justify mx-auto">
 		<h1 class="pCentrado">Aviso de Cookies</h1><br>
 			<h3>¿Qué son las cookies?</h3>
 				Una cookie es un fichero que se descarga en su ordenador al acceder
@@ -60,7 +60,7 @@
 
 
 		<div class="row text-center mx-auto">
-			<div class="col-sm-5 mx-auto">
+			<div class="col-sm-12 mx-auto">
 
 		<a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank" rel="noopener">Configurar cookies en Google Chrome</a><br>
 
@@ -75,7 +75,7 @@
 </div>
  
 		<div class="row text-justify mx-auto" style="margin-bottom:2%;">
-		<div class="col-sm-5 mx-auto">
+		<div class="col-sm-12 mx-auto">
 		<h3>Cookies de terceros.</h3>
 
 		Esta página web utiliza servicios de terceros para recopilar información con fines estadísticos y de uso de la web. Se usan cookies de DoubleClick para mejorar la publicidad que se incluye en el sitio web. Son utilizadas para orientar la publicidad según el contenido que es relevante para un usuario, mejorando así la calidad de experiencia en el uso del mismo.
@@ -94,5 +94,6 @@
 </div>
 	
 	</main>
+</div>
 </body>
 </html>
