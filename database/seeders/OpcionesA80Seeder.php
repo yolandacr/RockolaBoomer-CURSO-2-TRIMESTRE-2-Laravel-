@@ -241,7 +241,7 @@ class OpcionesA80Seeder extends Seeder
         $a80101-> save();
 
         $a80102 = new opcione();
-        $a80102->nombre = "every move yo make";
+        $a80102->nombre = "every move you make";
         $a80102->id_cancion = 10;
 
         $a80102-> save();

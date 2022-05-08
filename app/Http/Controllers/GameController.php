@@ -24,11 +24,11 @@ class GameController extends Controller
 
 
     public function dificil(){
-        $result = $_GET['categoria'];
+        $categoria = $_GET['categoria'];
         $arrayCanciones=[];
 
         $arrayCanciones= DB::table('canciones')
-        ->where('categoria', 'años80')
+        ->where('categoria', $categoria)
         ->inRandomOrder()
         ->take(10)
         ->get();
@@ -41,12 +41,12 @@ class GameController extends Controller
     
 
     public function facil(){
-        $result = $_GET['categoria'];
+        $categoria = $_GET['categoria'];
         $arrayCanciones=[];
         $opciones=[];
     
         $arrayCanciones= DB::table('canciones')
-        ->where('categoria', 'años80')
+        ->where('categoria', $categoria)
         ->inRandomOrder()
         ->take(10)
         ->get();
@@ -65,12 +65,22 @@ class GameController extends Controller
         return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
     }
 
-    public function validar(Request $request){
-        var_dump($request);
+   /*  public function validar(){
+        echo "<script>alert('entra')</script>";
+        $respuesta = $_POST['respuesta'];
+        $correcta = $_POST['correcta'];
+        $suma = 50;
+    
 
-        return $request;
+        if($respuesta==$correcta){
+            echo "<script>alert('has acertado')</script>";
+        }else{
+            echo "<script>alert('respuesta erronea')</script>";
+        }
 
-    }
+        return view('screens/facil',$puntos);
+
+    } */
 
     
 

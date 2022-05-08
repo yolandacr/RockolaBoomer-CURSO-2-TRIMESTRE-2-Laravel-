@@ -21,11 +21,12 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     </div>
     <div class="col">
     <audio controls>
+    <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
     <source src="{{ $cancionActual -> ruta }}" type="audio/wav">
     Tu navegador no es compatible con el audio de la web
     </audio>
     </div> 
-    <div class="col">PUNTOS: <span id="campoPuntos"></span>
+    <div class="col">PUNTOS: <span id="campoPuntos" value=0></span>
     </div>
     </div>
     </header>
@@ -34,37 +35,21 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     {{-- SECCION PRINCIPAL --}}
     
     <main style="margin-top:15%;">
-    <div class="row mx-auto" id="columna1">
-    <div class="col-sm-6 text-center">
+       {{-- <input type="hidden" value="{{$categoria}}" id="categoria"> --}}
+        <div class="row mx-auto" id="columna1">
+            <div class="col-sm-6 text-center">
+                <button id="boton1" type="button" class="btn btn-outline-danger" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
+                <button id="boton2" type="button" class="btn btn-outline-danger derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
+   
+            </div> 
 
-    <form action="facil" method="get">
-    <input type="hidden" value="{{$opciones[0] -> nombre}}" id="{{$opciones[0] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger">{{$opciones[0] -> nombre}}</button>
-    </form>
-
-    <form action="facil" method="get" style="margin-top:5%;">
-    <input type="hidden" value="{{$opciones[1] -> nombre}}" id="{{$opciones[1] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger derecha">{{$opciones[1] -> nombre}}</button>
-    </form>
-    </div> 
-
-    <div class="col-sm-6 text-center">
-    <form action="facil" method="get">
-    <input type="hidden" value="{{$opciones[2] -> nombre}}" id="{{$opciones[2] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger">{{$opciones[2] -> nombre}}</button>
-    </form>
-
-    <form action="facil" method="get" style="margin-top:5%;">
-    <input type="hidden" value="{{$opciones[3] -> nombre}}" id="{{$opciones[3] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger derecha">{{$opciones[3] -> nombre}}</button>
-    </form>
-    </div>  
-
+            <div class="col-sm-6 text-center">
+                <button id="boton3" type="button" class="btn btn-outline-danger" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
+                <button id="boton4" type="button" class="btn btn-outline-danger derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
+   
+            </div>  
+        </div> 
     </main>
-    </div>
-
-
-
 
 {{-- FOOTER --}}
 <div class="row text-center mx-auto" id="filaFooter" style="margin-top:12%;">

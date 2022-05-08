@@ -11,7 +11,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <link href="{{asset('css/facil.css')}}" rel="stylesheet" />
 </head>
 <body onload="imprimeUsuario()">
-<div class="container-fluid">
+    <div class="container-fluid">
 
 
     {{-- HEADER --}}  
@@ -33,13 +33,21 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
     {{-- SECCION PRINCIPAL --}}
     
-    <main style="margin-top:15%;">
-    <h1>¿Título de la canción?</h1>
-    <form action="" method="post">
-        <label for="respuesta"> Tu respuesta:</label>
-        <input type="text" id="respuesta">
-    </form>
+    <main>
+        <div class="row text-center" style="margin-top:5%;">
+            <div class="col-12">
+            <h1>¿Título de la canción?</h1>
+            <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
+            </div>
+        </div>
 
+        <div class="row text-center" style="margin-top:12%;">
+            <div class="col-12">
+                    <label for="respuesta"> Tu respuesta:</label>
+                    <input type="text" id="respuesta">
+                    <button type="button" onclick="validacion('dificil')">Enviar</button>
+            </div>
+        </div>
     </main>
     </div>
 
