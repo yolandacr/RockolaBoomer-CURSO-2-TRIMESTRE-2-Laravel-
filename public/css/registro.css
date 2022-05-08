@@ -1,0 +1,72 @@
+
+body {
+  font: 400 1em/1.5 "Neuton";
+  background: #090d00;
+  color:rgba(252, 252, 252, 0.788);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#titulo{
+
+  color: rgb(201, 118, 212);
+  text-shadow: 0 0 80px rgba(104, 26, 78, 0.877);
+  text-transform: uppercase;
+}
+
+/* FORMULARIO */
+form{
+text-transform: uppercase;
+
+}
+
+
+.btn-primary {
+  text-transform: uppercase;
+  color:#ac4295;
+  background-color:transparent;
+  border-color: #ac4295;
+}
+
+.btn-primary:hover{
+  color: #fff;
+  background-color: #76118a;
+  border-color:#76118a;
+}
+
+small{
+  color:red;
+  font-size: 0.5rem;
+}
+
+#filaTitulo{
+  margin-top:5%;
+}
+
+#filaForm{
+  color:#ac4295;
+  background-color: #090d00;
+  padding: 2%;
+  border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+ 
+  
+}
+#filaCont{
+  margin-top: 2%;
+  background-image: url("../img/imagenFondo.jpg"); 
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10%;
+  
+}
+
+button{
+  margin-top:3%;
+}
+
+#filaFooter{
+margin-top: 4%;
+}

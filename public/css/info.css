@@ -1,0 +1,27 @@
+    body {
+    font: 400 1em/1.5 "Neuton";
+    background: #090d00;
+    color:rgba(252, 252, 252, 0.938);
+    text-align:justify;
+    overflow: auto;
+    }
+
+    header{
+    color: rgb(201, 118, 212);
+    margin-top: 5%;
+    }
+
+    #principal{
+    margin-top: 10%;
+    }
+
+    footer{
+    margin-top:20%;
+    }
+    #texto{
+    margin-top:1%;
+    padding: 3%;
+    border:solid;
+    border-radius: 20px;
+    border-color: blueviolet;
+    }
