@@ -11,15 +11,6 @@
 </head>
 
 
-{{-- <div class="center">
-  <button class="btn" onclick="irModo('años80')">
-      <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-      </svg>
-    <span style= "color:white" >AÑOS 80<br></span>
-  </button>
-</div> --}}
 
 <body>
   <div class="container">
@@ -40,27 +31,27 @@
           <div class="row mx-auto" id="columna1">
             <div class="col-sm-6" style="margin-top:4%;">
 
-            <form action="facil" method="get">
+            <form action="dificil" method="get">
               <input type="hidden" placeholder="años80" value="años80" id="años80" name="categoria">
               <button type="submit" class="btn btn-outline-danger">AÑOS 80</button>
             </form>
             
           
-            <form action="facil" method="get" style="margin-top:5%;">
+            <form action="dificil" method="get" style="margin-top:4%;">
               <input type="hidden" placeholder="años90" value="años90" id="años90" name="categoria">
               <button type="submit" class="btn btn-outline-danger">AÑOS 90</button>
             </form>
           </div>
      
         <div class="col-sm-6 " style="margin-top:4%;">
-          <form action="facil" method="get">
+          <form action="dificil" method="get">
             <input type="hidden" placeholder="años2000" value="años2000" id="años2000" name="categoria">
             <button type="submit" class="btn btn-outline-danger">AÑOS 2000</button>
           </form>
       
-          <form action="facil" method="get" style="margin-top:5%;">
+          <form action="dificil" method="get" style="margin-top:5%;">
             <input type="hidden" placeholder="actualidad" value="actualidad" id="actualidad" name="categoria">
-            <button type="submit" class="btn btn-outline-danger">ACTUALIDAD</button>
+            <button type="submit" class="btn btn-outline-danger">AÑOS 80</button>
           </form>
       </div> 
     

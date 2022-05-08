@@ -10,13 +10,14 @@ var modo;
 function guardarModo(string){
 if(string=='facil'){
     localStorage.setItem("modo",'facil');
-    window.open("facil","_self")
+    window.open("categoria","_self")
     
 }else{
     localStorage.setItem("modo",'dificil');
-    
-    }
+    window.open("categoriaDificil","_self")
+     }
 }
+
 
 function guardaUsuario(){
    jugador=document.getElementById("usuario").value;
@@ -25,25 +26,14 @@ function guardaUsuario(){
    localStorage.setItem("puntos",puntos);
 }
 
-function irModo(categoria){
-            localStorage.setItem("categoria",categoria);
-            window.open("modo","_self")
-                        }
 
- function recuperaCategoria(){
-  localStorage.getItem('categoria');
- }
+/**
+ * FUNCION PINTA NOMBRE DE USUARIO EN LA PANTALLA DE JUEGO
+ */
 
 function imprimeUsuario(){
     var jugador=localStorage.getItem('jugador');
     var puntos=localStorage.getItem('puntos');
     document.getElementById('campoJugador').innerHTML=jugador;
     document.getElementById('campoPuntos').innerHTML=puntos;
-    
-    
 }
-
-function traerCategoria(){
-    let categoria = localStorage.getItem('categoria');
-}
-

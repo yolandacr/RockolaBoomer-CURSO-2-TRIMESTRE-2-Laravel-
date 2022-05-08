@@ -43,8 +43,8 @@
 
 
     <audio controls>
-      <source src="music/intro.mp3" type="audio/mpeg">
-      <source src="music/intro.wav" type="audio/wav">
+      <source src="sonidos/intro.mp3" type="audio/mpeg">
+      <source src="sonidos/intro.wav" type="audio/wav">
       Tu navegador no es compatible con el audio de la web
     </audio>
 

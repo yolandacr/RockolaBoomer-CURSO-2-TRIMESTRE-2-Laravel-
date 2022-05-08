@@ -34,31 +34,11 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     {{-- SECCION PRINCIPAL --}}
     
     <main style="margin-top:15%;">
-    <div class="row mx-auto" id="columna1">
-    <div class="col-sm-6 text-center">
-
-    <form action="facil" method="get">
-    <input type="hidden" value="{{$opciones[0] -> nombre}}" id="{{$opciones[0] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger">{{$opciones[0] -> nombre}}</button>
+    <h1>¿Título de la canción?</h1>
+    <form action="" method="post">
+        <label for="respuesta"> Tu respuesta:</label>
+        <input type="text" id="respuesta">
     </form>
-
-    <form action="facil" method="get" style="margin-top:5%;">
-    <input type="hidden" value="{{$opciones[1] -> nombre}}" id="{{$opciones[1] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger derecha">{{$opciones[1] -> nombre}}</button>
-    </form>
-    </div> 
-
-    <div class="col-sm-6 text-center">
-    <form action="facil" method="get">
-    <input type="hidden" value="{{$opciones[2] -> nombre}}" id="{{$opciones[2] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger">{{$opciones[2] -> nombre}}</button>
-    </form>
-
-    <form action="facil" method="get" style="margin-top:5%;">
-    <input type="hidden" value="{{$opciones[3] -> nombre}}" id="{{$opciones[3] -> nombre}}" name="titulo">
-    <button type="button" class="btn btn-outline-danger derecha">{{$opciones[3] -> nombre}}</button>
-    </form>
-    </div>  
 
     </main>
     </div>

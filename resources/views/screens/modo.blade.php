@@ -29,7 +29,7 @@
 
       <div class="row text-center">
         <div class="col-sm-12">
-        <button type="button" class="btn btn-dark" id="facil"><a href="facil" onclick="guardarModo('facil')">Fácil</a></button>
+          <button type="button" class="btn btn-dark"  id="facil" onclick="guardarModo('facil')">Fácil</button>
         </div>  </div>
 
 
@@ -37,7 +37,7 @@
        
        <div class="row text-center">
         <div class="col-sm-12">
-        <button type="button" class="btn btn-dark" disabled="true" id="dificil" onclick="guardarModo('dificil')">Difícil<br>-Próximamente-</button>
+        <button type="button" class="btn btn-dark"  id="dificil" onclick="guardarModo('dificil')">Difícil</button>
       </div></div>
     
    </main>
@@ -45,7 +45,7 @@
     <div class="row text-center mx-auto">
       <div class="col-sm-12">
         <footer>
-          <a href="{{route('screens.categoria')}}">ATRÁS</a>
+          <a href="{{route('users.login')}}">ATRÁS</a>
         </footer>
      </div>
     </div>
