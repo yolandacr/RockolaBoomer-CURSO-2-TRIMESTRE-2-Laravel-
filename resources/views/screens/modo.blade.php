@@ -41,15 +41,13 @@
       </div></div>
     
    </main>
-   <footer>
-    <div class="row text-center mx-auto">
-      <div class="col-sm-12">
-        <footer>
-          <a href="{{route('users.login')}}">ATRÁS</a>
-        </footer>
-     </div>
-    </div>
-   </footer>
+   <div class="row text-center mx-auto">
+    <div class="col-sm-12">
+    <footer>
+       <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+    </footer>
+ </div>
+ </div>
   </div>
 
   <script src="js/juego.js"></script>

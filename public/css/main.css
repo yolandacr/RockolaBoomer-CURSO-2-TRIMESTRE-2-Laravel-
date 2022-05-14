@@ -165,6 +165,7 @@ audio {
     width: 40%;
     background-color: transparent;
     border-color: #ac4295;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .btn:hover {

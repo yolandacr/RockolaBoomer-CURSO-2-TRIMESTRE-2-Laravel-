@@ -13,3 +13,8 @@ body {
   .row{
  margin-top:2%;
   }
+
+  header{
+      font-family: 'Gloria Hallelujah', cursive;
+      margin-top:6%;
+  }

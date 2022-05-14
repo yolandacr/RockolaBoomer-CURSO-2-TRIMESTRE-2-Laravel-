@@ -18,8 +18,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 
     {{-- HEADER --}}  
-    <header style="margin-top:3%;">
-    <div class="row text-center">
+    <header>
+    <div class="row text-center" style="background-color:#090d00;padding:0.2%; margin-top:-0.1%;">
     <div class="col">JUGADOR: <span id="campoJugador"></span>
     </div>
     <div class="col">
@@ -52,36 +52,16 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
    
             </div>  
         </div>
-
-        
-      {{--   <div class="row mx-auto" id="columna1">
-            <div class="col-sm-6 text-center">
-                <form action="facil" method="get">
-                    <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
-                    <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
-                    <button id="boton1" type="submit" class="btn btn-outline-danger" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button>
-                </form>
-                
-                
-                <button id="boton2" type="button" class="btn btn-outline-danger derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
-            </div> 
-
-            <div class="col-sm-6 text-center">
-                <button id="boton3" type="button" class="btn btn-outline-danger" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
-                <button id="boton4" type="button" class="btn btn-outline-danger derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
-   
-            </div>  
-        </div>  --}} 
     </main>
 
 {{-- FOOTER --}}
-<div class="row text-center mx-auto" id="filaFooter" style="margin-top:12%;">
-<div class="col-sm-12">
-<footer>
-<p><a href="{{route('home')}}">ATRÁS</a></p>
-</footer>
-</div>
-</div>
+<div class="row text-center mx-auto">
+    <div class="col-sm-12">
+    <footer>
+       <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+    </footer>
+ </div>
+ </div>
 
 {{-- PARTE SCRIPTS --}}
 <script src="js/juego.js"></script>

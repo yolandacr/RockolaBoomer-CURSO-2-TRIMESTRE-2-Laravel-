@@ -11,16 +11,6 @@
 </head>
 
 
-{{-- <div class="center">
-  <button class="btn" onclick="irModo('años80')">
-      <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-      </svg>
-    <span style= "color:white" >AÑOS 80<br></span>
-  </button>
-</div> --}}
-
 <body>
   <div class="container">
       {{-- HEADER --}}  
@@ -74,13 +64,13 @@
   
   
   {{-- FOOTER --}}
-  <div class="row text-center mx-auto" id="filaFooter" style="margin-top:10%;">
-  <div class="col-sm-12">
-  <footer>
-  <p><a href="{{route('screens.modo')}}">ATRÁS</a></p>
-  </footer>
-  </div>
-  </div>
+  <div class="row text-center mx-auto">
+    <div class="col-sm-12">
+    <footer>
+       <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+    </footer>
+ </div>
+ </div>
   
   </div>
 </div>

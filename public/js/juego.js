@@ -44,11 +44,6 @@ let categoria = document.getElementById('categoria').value;
 let respuesta= '';
 let puntos = localStorage.getItem('puntos');
 
-/* $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')     
-    }
-});  */
 
 
 if(modo=="facil"){
@@ -76,10 +71,10 @@ if(modo=="facil"){
         localStorage.setItem("puntos",suma);
         document.getElementById('campoPuntos').innerHTML=suma;
         alert('¡Respuesta Correcta!');
-        // window.open("facil?categoria='+categoria+'","_self")
+        window.open("facil?categoria='"+categoria+"'","_self")
     }else{
         alert('Oh...¡Has fallado!');
-        // window.open("facil?categoria='+categoria+'","_self")
+        window.open("facil?categoria='"+categoria+"'","_self")
     }
 
 }else{

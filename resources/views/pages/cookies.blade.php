@@ -12,13 +12,13 @@
 </head>
 <body>
     <div class="container" >
-	<div class="row text-center mx-auto">
-    <div class="col-sm-12 text-center mx-auto">
-    <header>
-        <a href="{{route('home')}}">ATRÁS</a>
-	</header>
-    </div>
-    </div>
+		<div class="row text-center mx-auto">
+			<div class="col-sm-12">
+			<header>
+			   <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+			</header>
+		 </div>
+		 </div>
 
 	
 
@@ -95,5 +95,6 @@
 	
 	</main>
 </div>
+<script src="js/rutas.js"></script>
 </body>
 </html>
