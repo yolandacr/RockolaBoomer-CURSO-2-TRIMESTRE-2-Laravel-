@@ -22,18 +22,23 @@ margin-top:6%;
 }
 
 /* FORMULARIO */
-.acceso {
-  color:#ac4295;
+ .acceso {
+  color: #fff;
   background-color:transparent;
   border-color: #ac4295;
   margin-top:6%;
+  width: 40%;
+  background-color: transparent;
+  border-color: #ac4295;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 .acceso:hover{
   color: #fff;
   background-color: #76118a;
   border-color:#76118a;
-}
+} 
+
 
 small{
   color:red;

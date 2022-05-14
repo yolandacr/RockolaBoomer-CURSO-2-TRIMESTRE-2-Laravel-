@@ -41,7 +41,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                 <input type="password" class="form-control" name="clave" placeholder="Contraseña" value="{{old('clave')}}">
                     {!!$errors->first('clave','<small>:message</small>')!!}
             </div>
-            <button type="submit" class="btn btn-primary acceso" id="boton" name="boton" onclick="guardaUsuario()">Acceder</button>
+            <button type="submit" class="btn acceso" id="boton" name="boton" onclick="guardaUsuario()">ACCEDER</button>
         </form>
         
         </div>
@@ -53,7 +53,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <div class="row text-center mx-auto" style="margin-top: 8%;">
     <div class="col-sm-12">
     <footer>
-       <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+       <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
     </footer>
  </div>
  </div>

@@ -7,9 +7,15 @@
 <title>Partida Fácil</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="{{asset('css/registro.css')}}" rel="stylesheet" />
+<link href="{{asset('css/opciones.css')}}" rel="stylesheet" />
 <link href="{{asset('css/facil.css')}}" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ {{-- PROBANDO FUENTES --}}
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Passion+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+{{-- FIN PROBANDO FUENTES --}}
+
 </head>
 
 
@@ -19,11 +25,11 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
     {{-- HEADER --}}  
     <header>
-    <div class="row text-center" style="background-color:#090d00;padding:0.2%; margin-top:-0.1%;">
+    <div class="row text-center" style="background-color:#090d00;padding-top:1%; margin-top:-5%;">
     <div class="col">JUGADOR: <span id="campoJugador"></span>
     </div>
     <div class="col">
-    <audio controls>
+    <audio controls style="height:5vh;margin-top:-2%;">
     <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
     <source src="{{ $cancionActual -> ruta }}" type="audio/wav">
     Tu navegador no es compatible con el audio de la web
@@ -37,18 +43,18 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
     {{-- SECCION PRINCIPAL --}}
     
-    <main style="margin-top:15%;">
+    <main style="margin-top:13%;">
        <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
         <div class="row mx-auto" id="columna1">
             <div class="col-sm-6 text-center">
-                <button id="boton1" type="button" class="btn btn-outline-danger" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
-                <button id="boton2" type="button" class="btn btn-outline-danger derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
+                <button id="boton1" type="button" class="btn btn-dark modo" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
+                <button id="boton2" type="button" class="btn btn-dark modo derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
    
             </div> 
 
             <div class="col-sm-6 text-center">
-                <button id="boton3" type="button" class="btn btn-outline-danger" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
-                <button id="boton4" type="button" class="btn btn-outline-danger derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
+                <button id="boton3" type="button" class="btn btn-dark modo" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
+                <button id="boton4" type="button" class="btn btn-dark modo derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
    
             </div>  
         </div>
@@ -58,7 +64,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <div class="row text-center mx-auto">
     <div class="col-sm-12">
     <footer>
-       <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+       <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
     </footer>
  </div>
  </div>
@@ -69,5 +75,6 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 </div>
+<script src="js/rutas.js"></script>
 </body>
 </html>

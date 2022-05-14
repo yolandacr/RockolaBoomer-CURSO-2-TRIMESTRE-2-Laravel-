@@ -32,4 +32,9 @@
         background-color: #732084;
         color:white;
         text-align: center;
+        margin-top: 12%;
+    }
+
+    .fila {
+        background-color: #090d00;
     }

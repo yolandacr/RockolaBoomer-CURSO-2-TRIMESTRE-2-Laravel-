@@ -35,7 +35,7 @@
            <th>Total de Puntos</th>
          </tr>
          @foreach ($partidas as $partida)
-         <tr>
+         <tr class="fila">
             <td>{{$partida -> nombre_usuario}}</td>
          <td>{{ $partida -> puntos}}</td>
          </tr>

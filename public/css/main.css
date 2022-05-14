@@ -8,7 +8,6 @@ html {
     height: 100%;
 }
 body {
-    font: 400 1em/1.5 "Neuton";
     background: #090d00;
     color: rgba(252, 252, 252, 0.788);
     text-align: center;
@@ -16,6 +15,7 @@ body {
     width: 100%;
     overflow: auto;
     overflow-x: hidden;
+    text-transform: uppercase;
 }
 
 .mainHome {
@@ -34,7 +34,6 @@ audio {
 }
 
 #pPrincipal {
-    text-transform: uppercase;
     letter-spacing: 0.5em;
     display: inline-block;
     border: 4px double rgba(68, 35, 60, 0.25);
@@ -162,24 +161,18 @@ audio {
     margin-top: 50vh;
 }
 .btn {
-    width: 40%;
+    width: 15%;
     background-color: transparent;
     border-color: #ac4295;
     font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1rem;
+    
 }
 
 .btn:hover {
     color: #fff;
     background-color: #76118a;
     border-color:#76118a ;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-a:hover {
-    color: white;
 }
 
 /* MEDIA QUERIES */
@@ -208,12 +201,21 @@ a:hover {
     audio {
         width: 90vw;
     }
+
+    .btn {
+        width: 40%;
+    }
 }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 1024px) and (orientation: landscape) {
     #pPrincipal {
         margin-top: 7vh;
     }
+
+    .btn {
+        width: 40%;
+    }
+
     .container {
         margin-top: 80vh;
         font-size: 1.5rem;

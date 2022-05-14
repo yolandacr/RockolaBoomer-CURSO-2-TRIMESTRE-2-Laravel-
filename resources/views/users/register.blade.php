@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="Juego divertido de adivinar canciones. Registro">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login</title>
+<title>Registro</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="{{asset('css/registro.css')}}" rel="stylesheet" />
@@ -41,7 +41,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                 <input type="password" class="form-control" name="clave" placeholder="Contraseña" value="{{old('clave')}}">
                     {!!$errors->first('clave','<small>:message</small>')!!}
             </div>
-            <button type="submit" class="btn btn-primary acceso" name="boton">Acceder</button>
+            <button type="submit" class="btn btn-primary acceso" name="boton">ACCEDER</button>
         </form>
         
         </div>

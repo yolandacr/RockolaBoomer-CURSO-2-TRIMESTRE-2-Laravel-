@@ -2,3 +2,9 @@ button{
     width: 40%;
     margin-top: 5%;
 }
+
+body {
+    background-image: url(../img/imagenFondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
