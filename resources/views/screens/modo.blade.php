@@ -48,8 +48,8 @@
       </div></div>
     
    </main>
-   <div class="row text-center mx-auto">
-    <div class="col-sm-12">
+   <div class="row text-center mx-auto" >
+    <div class="col-sm-12" >
     <footer>
        <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
     </footer>

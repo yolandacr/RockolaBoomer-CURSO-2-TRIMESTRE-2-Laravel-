@@ -22,6 +22,7 @@ function guardaUsuario(){
    jugador=document.getElementById("usuario").value;
    localStorage.setItem("jugador",jugador);
    localStorage.setItem("puntos",Number(0));
+   let ronda=localStorage.setItem('ronda',Number(1));
 }
 
 
@@ -37,16 +38,20 @@ function imprimeUsuario(){
     document.getElementById('campoPuntos').innerHTML=puntos;
 } 
 
+
+/**
+ * FUNCION PARA VALIDAR LA RESPUESTA EN EL JUEGO FÁCIL
+ * @param {*} numero 
+ */
+
 function validacion(numero){
 let correcta = document.getElementById('respuestaCorrecta').value;
 let modo = localStorage.getItem('modo');
 let categoria = document.getElementById('categoria').value;
 let respuesta= '';
 let puntos = localStorage.getItem('puntos');
+let ronda =localStorage.getItem('ronda');
 
-
-
-if(modo=="facil"){
     
      switch (numero){
         case 1:
@@ -64,33 +69,50 @@ if(modo=="facil"){
     }
 
 
+    if(ronda<10){
+        alert(ronda);
 
-    if (respuesta==correcta){
+        if (respuesta==correcta){
         
-        suma= Number(puntos)+ 50;
+            suma= Number(puntos)+ 50;
+            localStorage.setItem("puntos",suma);
+            document.getElementById('campoPuntos').innerHTML=suma;
+            alert('¡Respuesta Correcta!');
+
+            sumaRonda = Number(ronda)+ 1;
+            localStorage.setItem('ronda',sumaRonda);
+
+            window.open(categoria,"_self")
+        }else{
+            alert('Oh...¡Has fallado!');
+            sumaRonda = Number(ronda)+ 1;
+            localStorage.setItem('ronda',sumaRonda);
+            window.open(categoria,"_self")
+        }
+    }else{
+        alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
+        window.open("../ranking","_self")
+    }
+    
+
+
+
+
+function validacionDificil(){
+    alert('entra');
+    /* let correcta = document.getElementById('respuestaCorrecta').value;
+    let categoria = document.getElementById('categoria').value;
+    let puntos = localStorage.getItem('puntos');
+    let respuesta = document.getElementById('respuesta').value;
+    
+    if(respuesta==correcta){
+        suma= Number(puntos)+ 100;
         localStorage.setItem("puntos",suma);
         document.getElementById('campoPuntos').innerHTML=suma;
         alert('¡Respuesta Correcta!');
-        window.open("facil?categoria='"+categoria+"'","_self")
+        //window.open("facil?categoria='"+categoria+"'","_self")
     }else{
         alert('Oh...¡Has fallado!');
-        window.open("facil?categoria='"+categoria+"'","_self")
-    }
-
-}else{
-    
-    if(respuesta==correcta){
-        puntos= puntos+100;
-        localStorage.setItem("puntos",puntos);
-        document.getElementById('campoPuntos').innerHTML=puntos;
-        alert('¡Respuesta Correcta!');
-    }else{
-        alert('Oh...¡Has fallado!');
-    }
+    } */
 }
-
-    
-
-    
-    
 }

@@ -1,5 +1,4 @@
 button{
-    width: 40%;
     margin-top: 5%;
 }
 
@@ -7,4 +6,36 @@ body {
     background-image: url(../img/imagenFondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    font-size: 2.5vw;
+    
+}
+
+.opcion{
+        width: 20rem;
+        background-color: #090d00;
+        border-color: #ac4295;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.8rem;
+}
+
+.opcion:hover {
+    color: #fff;
+    background-color: #76118a;
+    border-color:#76118a ;
+}
+
+.enviar{
+    width: 10rem;
+    height: 5vh;
+    background-color: #090d00;
+    border-color: #ac4295;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    margin:auto;
+}
+
+.enviar:hover {
+color: #fff;
+background-color: #76118a;
+border-color:#76118a ;
 }

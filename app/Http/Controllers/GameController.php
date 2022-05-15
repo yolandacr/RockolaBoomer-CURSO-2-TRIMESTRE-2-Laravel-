@@ -24,31 +24,11 @@ class GameController extends Controller
 
 
     public function dificil(){
-        $categoria = $_GET['categoria'];
-        $arrayCanciones=[];
-
-        $arrayCanciones= DB::table('canciones')
-        ->where('categoria', $categoria)
-        ->inRandomOrder()
-        ->take(10)
-        ->get();
-
-        $cancionActual= new Cancione;
-        $cancionActual = $arrayCanciones[0];
-
-        return view('screens/dificil',['cancionActual'=>$cancionActual]);
-    }
-    
-
-    public function facil(){
-        session_start();
+        // session_start();
 
         $categoria = $_GET['categoria'];
-        $_SESSION['categoria'] = $categoria;
-        $arrayCanciones=[];
-        
-        $opciones=[];
-    
+        // $_SESSION['categoria'] = $categoria;
+        /* $arrayCanciones=[];
         $arrayCanciones= DB::table('canciones')
         ->where('categoria', $categoria)
         ->inRandomOrder()
@@ -59,20 +39,39 @@ class GameController extends Controller
 
         
         $cancionActual= new Cancione;
+        $cancionActual = $arrayCanciones[0];*/
+
+        $cancionActual= DB::table('canciones')
+        ->where('categoria', $categoria)
+        ->inRandomOrder()
+        ->take(1)
+        ->get();
+
+        return view('screens/dificil',['cancionActual'=>$cancionActual]);
+    }
+    
+/**
+ * FUNCION PARA EL JUEGO FÁCIL
+ */
+     public function facil($categoria){
+        $arrayCanciones=[];
+        $arrayCanciones= DB::table('canciones')
+        ->where('categoria', $categoria)
+        ->inRandomOrder()
+        ->take(10)
+        ->get();
+
+        $cancionActual= new Cancione;
         $cancionActual = $arrayCanciones[0];
 
         $opciones = DB::table('opciones')
         ->where('id_cancion', $cancionActual->id)
         ->inRandomOrder()
         ->get();
-
-        
-
         
 
         return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
-    }
-    
+     }
 
    public function validar(){
         $categoria = $_SESSION['categoria'];
@@ -91,4 +90,5 @@ class GameController extends Controller
 
     return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
 
-}}
+}
+}

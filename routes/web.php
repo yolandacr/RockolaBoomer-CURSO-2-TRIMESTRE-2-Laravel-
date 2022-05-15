@@ -35,9 +35,11 @@ Route::get('modo', [GameController::class,'level'])->name('screens.modo');
 Route::get('categoria', [GameController::class,'categoria'])->name('screens.categoria');
 Route::get('categoriaDificil', [GameController::class,'categoriaDficil'])->name('screens.categoriaDificil');
 
-Route::get('facil', [GameController::class,'facil'])->name('screens.facil');
-Route::post('facil', [GameController::class,'validar'])->name('facil.validar');
+/* Route::get('facil', [GameController::class,'facil'])->name('screens.facil');
+Route::post('facil', [GameController::class,'validar'])->name('facil.validar'); */
+Route::get('facil/{categoria}', [GameController::class,'facil']);
 
 Route::get('dificil', [GameController::class,'dificil'])->name('screens.dificil');
+Route::post('dificil', [GameController::class,'validarDificil'])->name('dificil.validar');
 
 

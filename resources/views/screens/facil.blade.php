@@ -26,16 +26,16 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     {{-- HEADER --}}  
     <header>
     <div class="row text-center" style="background-color:#090d00;padding-top:1%; margin-top:-5%;">
-    <div class="col">JUGADOR: <span id="campoJugador"></span>
+    <div class="col-4">JUGADOR: <span id="campoJugador"></span>
     </div>
-    <div class="col">
-    <audio controls style="height:5vh;margin-top:-2%;">
+    <div class="col-4">
+    <audio controls style="height:3vh;width:30vw;">
     <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
-    <source src="{{ $cancionActual -> ruta }}" type="audio/wav">
+    <source src="../{{$cancionActual ->ruta}}" type="audio/wav">
     Tu navegador no es compatible con el audio de la web
     </audio>
     </div> 
-    <div class="col">PUNTOS: <span id="campoPuntos" value=0></span>
+    <div class="col-4">PUNTOS: <span id="campoPuntos" value=0></span>
     </div>
     </div>
     </header>
@@ -47,14 +47,14 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
        <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
         <div class="row mx-auto" id="columna1">
             <div class="col-sm-6 text-center">
-                <button id="boton1" type="button" class="btn btn-dark modo" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
-                <button id="boton2" type="button" class="btn btn-dark modo derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
+                <button id="boton1" type="button" class="btn btn-dark opcion" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
+                <button id="boton2" type="button" class="btn btn-dark opcion derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
    
             </div> 
 
             <div class="col-sm-6 text-center">
-                <button id="boton3" type="button" class="btn btn-dark modo" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
-                <button id="boton4" type="button" class="btn btn-dark modo derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
+                <button id="boton3" type="button" class="btn btn-dark opcion" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
+                <button id="boton4" type="button" class="btn btn-dark opcion derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
    
             </div>  
         </div>
@@ -70,11 +70,12 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
  </div>
 
 {{-- PARTE SCRIPTS --}}
-<script src="js/juego.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 </div>
-<script src="js/rutas.js"></script>
+<script src="../js/juego.js"></script>
+<script src="../js/rutas.js"></script>
 </body>
 </html>
