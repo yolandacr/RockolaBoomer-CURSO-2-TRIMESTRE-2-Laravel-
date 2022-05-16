@@ -34,14 +34,14 @@
       <main>
           <div class="row" id="columna1">
             <div class="col-sm-6 text-center" style="margin-top:4%;">
-              <button type="button" class="btn btn-dark categoria" onclick="window.open('facil/AÑOS80','_self')">AÑOS 80</button><br>
-              <button style="margin-top:4%;"type="button" class="btn btn-dark categoria" onclick="window.open('facil/AÑOS90','_self')">AÑOS 90</button>
+              <button type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS80');">AÑOS 80</button><br>
+              <button style="margin-top:4%;"type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS90');">AÑOS 90</button>
           
           </div>
      
         <div class="col-sm-6 text-center" style="margin-top:4%;">
-            <button type="button" class="btn btn-dark categoria" onclick="window.open('facil/AÑOS2000','_self')">AÑOS 2000</button><br>
-            <button style="margin-top:4%;" type="button" class="btn btn-dark categoria" onclick="window.open('facil/ACTUALIDAD','_self')">ACTUALIDAD</button>
+            <button type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS2000');">AÑOS 2000</button><br>
+            <button style="margin-top:4%;" type="button" class="btn btn-dark categoria" onclick="pantallaJuego('ACTUALIDAD');">ACTUALIDAD</button>
         </div> 
     
   

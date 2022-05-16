@@ -1,3 +1,5 @@
+const { toLower } = require("lodash");
+
 var jugador;
 var fecha;
 var modo;
@@ -9,12 +11,11 @@ var modo;
 function guardarModo(string){
 if(string=='facil'){
     localStorage.setItem("modo",'facil');
-    window.open("categoria","_self")
     
 }else{
     localStorage.setItem("modo",'dificil');
-    window.open("categoriaDificil","_self")
      }
+     window.open("categoria","_self")
 }
 
 
@@ -37,6 +38,52 @@ function imprimeUsuario(){
     document.getElementById('campoJugador').innerHTML=jugador;
     document.getElementById('campoPuntos').innerHTML=puntos;
 } 
+
+/**
+ * FUNCION PARA VALIDAR EL MODO DIFICIL
+ */
+
+function validacionDificil(){
+let correcta = document.getElementById('respuestaCorrecta').value;
+let modo = localStorage.getItem('modo');
+let categoria = document.getElementById('categoria').value;
+let respuesta= document.getElementById('respuesta').value;
+let puntos = localStorage.getItem('puntos');
+let ronda =localStorage.getItem('ronda');
+
+respuesta = respuesta.toLowerCase();
+
+if (respuesta==correcta){
+    alert('¡Respuesta Correcta!');
+    suma= Number(puntos)+ 100;
+    localStorage.setItem("puntos",suma);
+    document.getElementById('campoPuntos').innerHTML=suma;
+    
+    sumaRonda = Number(ronda)+ 1;
+    localStorage.setItem('ronda',sumaRonda);
+
+    window.open(categoria,"_self")
+
+    if(ronda==10){
+    suma= Number(puntos)+ 100;
+    localStorage.setItem("puntos",suma);
+    document.getElementById('campoPuntos').innerHTML=suma;
+    alert('El juego ha terminado. Has obtenido '+suma+' puntos')
+    window.open("../ranking","_self")
+    }
+}else{
+    alert('Oh...¡Has fallado!');
+    sumaRonda = Number(ronda)+ 1;
+    localStorage.setItem('ronda',sumaRonda);
+    window.open(categoria,"_self")
+
+    if(ronda==10){
+        alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
+        window.open("../ranking","_self")
+        }
+}
+
+}
 
 
 /**
@@ -67,10 +114,8 @@ let ronda =localStorage.getItem('ronda');
          respuesta = document.getElementById('boton4').value;
             break;
     }
-
-
-    if(ronda<10){
-        alert(ronda);
+    
+    respuesta = respuesta.toLowerCase();
 
         if (respuesta==correcta){
         
@@ -83,36 +128,25 @@ let ronda =localStorage.getItem('ronda');
             localStorage.setItem('ronda',sumaRonda);
 
             window.open(categoria,"_self")
+
+            if(ronda==10){
+            suma= Number(puntos)+ 50;
+            localStorage.setItem("puntos",suma);
+            document.getElementById('campoPuntos').innerHTML=suma;
+            alert('El juego ha terminado. Has obtenido '+suma+' puntos')
+            window.open("../ranking","_self")
+            }
         }else{
             alert('Oh...¡Has fallado!');
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
             window.open(categoria,"_self")
+
+            if(ronda==10){
+                alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
+                window.open("../ranking","_self")
+                }
         }
-    }else{
-        alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
-        window.open("../ranking","_self")
-    }
     
-
-
-
-
-function validacionDificil(){
-    alert('entra');
-    /* let correcta = document.getElementById('respuestaCorrecta').value;
-    let categoria = document.getElementById('categoria').value;
-    let puntos = localStorage.getItem('puntos');
-    let respuesta = document.getElementById('respuesta').value;
     
-    if(respuesta==correcta){
-        suma= Number(puntos)+ 100;
-        localStorage.setItem("puntos",suma);
-        document.getElementById('campoPuntos').innerHTML=suma;
-        alert('¡Respuesta Correcta!');
-        //window.open("facil?categoria='"+categoria+"'","_self")
-    }else{
-        alert('Oh...¡Has fallado!');
-    } */
-}
 }

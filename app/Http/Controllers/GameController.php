@@ -23,30 +23,22 @@ class GameController extends Controller
     }
 
 
-    public function dificil(){
-        // session_start();
-
-        $categoria = $_GET['categoria'];
-        // $_SESSION['categoria'] = $categoria;
-        /* $arrayCanciones=[];
+    public function dificil($categoria){
+        $arrayCanciones=[];
         $arrayCanciones= DB::table('canciones')
         ->where('categoria', $categoria)
         ->inRandomOrder()
         ->take(10)
         ->get();
 
-        $_SESSION['canciones'] = $arrayCanciones;
-
-        
         $cancionActual= new Cancione;
-        $cancionActual = $arrayCanciones[0];*/
+        $cancionActual = $arrayCanciones[0];
 
-        $cancionActual= DB::table('canciones')
-        ->where('categoria', $categoria)
+        $opciones = DB::table('opciones')
+        ->where('id_cancion', $cancionActual->id)
         ->inRandomOrder()
-        ->take(1)
         ->get();
-
+        
         return view('screens/dificil',['cancionActual'=>$cancionActual]);
     }
     
@@ -73,22 +65,5 @@ class GameController extends Controller
         return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
      }
 
-   public function validar(){
-        $categoria = $_SESSION['categoria'];
-        $arrayCanciones=$_SESSION['canciones'];
-        unset($arrayCanciones[0]);
-
-        $cancionActual= new Cancione;
-        $cancionActual = $arrayCanciones[0];
-
-        $opciones = DB::table('opciones')
-        ->where('id_cancion', $cancionActual->id)
-        ->inRandomOrder()
-        ->get();
-        
-    
-
-    return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
-
-}
+   
 }

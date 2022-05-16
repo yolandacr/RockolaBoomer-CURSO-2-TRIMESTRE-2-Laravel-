@@ -47,7 +47,7 @@
    <div class="row text-center mx-auto" style="margin-top: 8%;">
       <div class="col-sm-12">
       <footer>
-         <button type="button" class="btn btn-primary" onclick="atras();">ATRÁS</button>
+         <button type="button" class="btn btn-primary" onclick="inicio();">INICIO</button>
       </footer>
    </div>
    </div>
