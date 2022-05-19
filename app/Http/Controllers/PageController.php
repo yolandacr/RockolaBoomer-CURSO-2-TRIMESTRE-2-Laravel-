@@ -38,7 +38,8 @@ class PageController extends Controller
 
         return view('pages/ranking',['partidas'=>$partidas]);
      }
-     
+
+  
    
 
 }

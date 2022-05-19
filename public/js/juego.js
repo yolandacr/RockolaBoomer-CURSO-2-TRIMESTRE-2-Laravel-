@@ -1,5 +1,3 @@
-const { toLower } = require("lodash");
-
 var jugador;
 var fecha;
 var modo;
@@ -39,6 +37,7 @@ function imprimeUsuario(){
     document.getElementById('campoPuntos').innerHTML=puntos;
 } 
 
+
 /**
  * FUNCION PARA VALIDAR EL MODO DIFICIL
  */
@@ -68,8 +67,9 @@ if (respuesta==correcta){
     suma= Number(puntos)+ 100;
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
-    alert('El juego ha terminado. Has obtenido '+suma+' puntos')
-    window.open("../ranking","_self")
+    alert('El juego ha terminado. Has obtenido '+suma+' puntos');
+    //window.open("../ranking","_self")
+    
     }
 }else{
     alert('Oh...¡Has fallado!');
@@ -79,7 +79,8 @@ if (respuesta==correcta){
 
     if(ronda==10){
         alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
-        window.open("../ranking","_self")
+        //window.open("../ranking","_self")
+        
         }
 }
 
@@ -134,19 +135,35 @@ let ronda =localStorage.getItem('ronda');
             localStorage.setItem("puntos",suma);
             document.getElementById('campoPuntos').innerHTML=suma;
             alert('El juego ha terminado. Has obtenido '+suma+' puntos')
-            window.open("../ranking","_self")
+            window.open("../fin","_self")
+
+           
             }
         }else{
             alert('Oh...¡Has fallado!');
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
-            window.open(categoria,"_self")
+            window.open(categoria,"_self");
 
             if(ronda==10){
-                alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
-                window.open("../ranking","_self")
+                alert('El juego ha terminado. Has obtenido '+puntos+' puntos');
+                window.open("../fin","_self");
                 }
         }
     
     
 }
+
+/**
+ * FUNCION PARA GRABAR PARTIDA
+ */
+
+function grabarPartida(){
+    let jugador = localStorage.getItem('jugador');
+    let puntos = localStorage.getItem('puntos');
+
+    document.getElementById('jugador').value=jugador;
+    document.getElementById('puntos').value=puntos;
+}
+
+

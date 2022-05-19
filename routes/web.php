@@ -37,7 +37,11 @@ Route::get('categoriaDificil', [GameController::class,'categoriaDficil'])->name(
 
 
 Route::get('facil/{categoria}', [GameController::class,'facil']);
-
 Route::get('dificil/{categoria}', [GameController::class,'dificil']);
+
+Route::get('fin', [GameController::class,'fin']);
+Route::post('fin', [GameController::class,'grabar']);
+
+
 
 

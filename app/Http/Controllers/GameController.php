@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cancione;
+use App\Models\Partida;
 use App\Models\opcione;
 use Illuminate\Support\Arr;
 
@@ -64,6 +65,24 @@ class GameController extends Controller
 
         return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
      }
+
+
+     public function fin(){
+        return view('screens/fin');
+     }
+
+
+     public function grabar(Request $request){
+        $partida = new Partida;
+        $partida->nombre_usuario = $request->jugador;
+        $partida->puntos= $request->puntos;
+        $partida->save();
+
+       return redirect('ranking');
+
+     }
+
+     
 
    
 }

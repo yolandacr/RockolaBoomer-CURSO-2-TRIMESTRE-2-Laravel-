@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="Juego divertido de adivinar canciones. Registro">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Partida Fácil</title>
+<title>Pantalla Final</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="{{asset('css/opciones.css')}}" rel="stylesheet" />
@@ -18,43 +18,32 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 </head>
 
 
-<body onload="imprimeUsuario()">
+<body onload="imprimeUsuario();grabarPartida()">
 <div class="container-fluid">
 
 
     {{-- HEADER --}}  
     <header>
-    <div class="row text-center" style="background-color:#090d00;padding-top:1%; margin-top:-5%;">
-    <div class="col-4">JUGADOR: <span id="campoJugador"></span>
-    </div>
-    <div class="col-4">
-    <audio controls style="height:3vh;width:30vw;">
-    <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
-    <source src="../{{$cancionActual ->ruta}}" type="audio/wav">
-    Tu navegador no es compatible con el audio de la web
-    </audio>
-    </div> 
-    <div class="col-4">PUNTOS: <span id="campoPuntos" value=0></span>
-    </div>
+    <div class="row text-center">
+    <h1>¡Fin de la partida!</h1>
+    <div class="col-12">Enhorabuena <span id="campoJugador"></span></div>
+    <div  class="col-12">Has obtenido un total de <span id="campoPuntos"></span> puntos</div>
     </div>
     </header>
 
 
     {{-- SECCION PRINCIPAL --}}
     
-    <main style="margin-top:13%;">
-       <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
+    <main>
         <div class="row mx-auto" id="columna1">
-            <div class="col-sm-6 text-center">
-                <button id="boton1" type="button" class="btn btn-dark opcion" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
-                <button id="boton2" type="button" class="btn btn-dark opcion derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
-   
-            </div> 
-
-            <div class="col-sm-6 text-center">
-                <button id="boton3" type="button" class="btn btn-dark opcion" onclick="validacion(3)" value="{{$opciones[2] -> nombre}}" >{{$opciones[2] -> nombre}}</button><br>
-                <button id="boton4" type="button" class="btn btn-dark opcion derecha" onclick="validacion(4)" value="{{$opciones[3] -> nombre}}">{{$opciones[3] -> nombre}}</button>
-   
+            <div class="col-sm-12 text-center">
+                <form action="fin" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="text"  id="jugador" name="jugador" value="">
+                <input type="text"  id="puntos" name="puntos" value="">
+                <button id="terminar" type="submit" class="btn btn-dark opcion"> TERMINAR PARTIDA</button>
+                </form>
+                
             </div>  
         </div>
     </main>
@@ -74,7 +63,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 </div>
-<script src="../js/juego.js"></script>
-<script src="../js/rutas.js"></script>
+<script src="./js/juego.js"></script>
+<script src="./js/rutas.js"></script>
 </body>
 </html>
