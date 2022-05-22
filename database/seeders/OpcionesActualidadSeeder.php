@@ -16,11 +16,11 @@ class OpcionesActualidadSeeder extends Seeder
      */
     public function run()
     {
-        $cancion4_opcion1 = new opcione();
-        $cancion4_opcion1->nombre = "que se joda todo lo demás";
-        $cancion4_opcion1->id_cancion = 31;
+        $cancion1_opcion1 = new opcione();
+        $cancion1_opcion1->nombre = "que se joda todo lo demás";
+        $cancion1_opcion1->id_cancion = 31;
 
-        $cancion4_opcion1-> save();
+        $cancion1_opcion1-> save();
 
         $cancion1_opcion2 = new opcione();
         $cancion1_opcion2->nombre = "el viaje";
@@ -41,35 +41,30 @@ class OpcionesActualidadSeeder extends Seeder
         $cancion1_opcion4-> save();
 
 
-        $cancion4_opcion1 = new opcione();
-        $cancion4_opcion1->nombre = "amapolas";
-        $cancion4_opcion1->id_cancion = 32;
-
-        $cancion4_opcion1-> save();
+        $cancion2_opcion1 = new opcione();
+        $cancion2_opcion1->nombre = "amapolas";
+        $cancion2_opcion1->id_cancion = 32;
+        $cancion2_opcion1-> save();
 
         $cancion2_opcion2 = new opcione();
         $cancion2_opcion2->nombre = "tú y yo";
         $cancion2_opcion2->id_cancion = 32;
-
         $cancion2_opcion2-> save();
 
         $cancion2_opcion3 = new opcione();
         $cancion2_opcion3->nombre = "centro del universo";
         $cancion2_opcion3->id_cancion = 32;
-
         $cancion2_opcion3-> save();
 
         $cancion2_opcion4 = new opcione();
         $cancion2_opcion4->nombre = "hasta que salte la presión";
         $cancion2_opcion4->id_cancion = 32;
-
         $cancion2_opcion4-> save();
 
 
         $cancion3_opcion1 = new opcione();
         $cancion3_opcion1->nombre = "berlin u5";
         $cancion3_opcion1->id_cancion = 33;
-
         $cancion3_opcion1-> save();
 
         $cancion3_opcion2 = new opcione();

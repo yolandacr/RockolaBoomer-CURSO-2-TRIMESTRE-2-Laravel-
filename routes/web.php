@@ -33,15 +33,11 @@ Route::post('login', [UsuarioController::class,'authenticate'])->name('users.aut
 
 Route::get('modo', [GameController::class,'level'])->name('screens.modo');
 Route::get('categoria', [GameController::class,'categoria'])->name('screens.categoria');
-Route::get('categoriaDificil', [GameController::class,'categoriaDficil'])->name('screens.categoriaDificil');
+Route::post('categoria', [GameController::class,'crearCancionesPartida']);
 
 
-Route::get('facil/{categoria}', [GameController::class,'facil']);
-Route::get('dificil/{categoria}', [GameController::class,'dificil']);
+Route::get('facil', [GameController::class,'facil']);
+Route::get('dificil', [GameController::class,'dificil']);
 
 Route::get('fin', [GameController::class,'fin']);
 Route::post('fin', [GameController::class,'grabar']);
-
-
-
-

@@ -30,7 +30,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     <div class="col-4">
     <audio controls style="height:3vh;width:30vw;">
     <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
-    <source src="../{{$cancionActual ->ruta}}" type="audio/wav">
+    <source src="{{$cancionActual ->ruta}}" type="audio/wav">
     Tu navegador no es compatible con el audio de la web
     </audio>
     </div> 
@@ -74,7 +74,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 </div>
-<script src="../js/juego.js"></script>
-<script src="../js/rutas.js"></script>
+<script src="js/juego.js"></script>
+<script src="js/rutas.js"></script>
 </body>
 </html>

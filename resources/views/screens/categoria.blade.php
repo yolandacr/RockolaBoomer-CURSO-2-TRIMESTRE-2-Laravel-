@@ -17,7 +17,7 @@
 </head>
 
 
-<body>
+<body onload="modoPhp()">
   <div class="container">
       {{-- HEADER --}}  
       <header>
@@ -32,21 +32,42 @@
   {{-- SECCION PRINCIPAL --}}
    
       <main>
-          <div class="row" id="columna1">
-            <div class="col-sm-6 text-center" style="margin-top:4%;">
-              <button type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS80');">AÑOS 80</button><br>
-              <button style="margin-top:4%;"type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS90');">AÑOS 90</button>
-          
-          </div>
-     
-        <div class="col-sm-6 text-center" style="margin-top:4%;">
-            <button type="button" class="btn btn-dark categoria" onclick="pantallaJuego('AÑOS2000');">AÑOS 2000</button><br>
-            <button style="margin-top:4%;" type="button" class="btn btn-dark categoria" onclick="pantallaJuego('ACTUALIDAD');">ACTUALIDAD</button>
-        </div> 
+        {{-- COLUMNA 1 --}}
+            <div class="row">
+              <div class="col-sm-6 text-center">
+                <form action="categoria" method="POST">
+                  @csrf
+                  <input type="hidden" value="años80" id="años80" name="categoria">
+                  <input type="hidden"value="" id="modo" name="modo">
+                  <button type="submit" class="btn btn-dark categoria">AÑOS 80</button>
+                </form>
+              
+                <form action="categoria" method="POST" >
+                  @csrf
+                  <input type="hidden" value="años90" id="años90" name="categoria">
+                  <input type="hidden"value="" id="modo" name="modo">
+                  <button type="submit" class="btn btn-dark categoria">AÑOS 90</button>
+                </form>
+              </div>
+            
+          {{-- COLUMNA 2 --}}
+            <div class="col-sm-6 text-center">
+              <form action="categoria" method="POST">
+                @csrf
+                <input type="hidden"  value="años2000" id="categoria" name="categoria">
+                <input type="hidden"value="" id="modo" name="modo">
+                <button type="submit" class="btn btn-dark categoria">AÑOS 2000</button>
+              </form>
+            
+              <form action="categoria" method="POST">
+                @csrf
+                <input type="hidden" value="actualidad" id="actualidad" name="categoria">
+                <input type="hidden"value="" id="modo" name="modo">
+                <button type="submit" class="btn btn-dark categoria">ACTUALIDAD</button>
+              </form>
+            </div>
     
-  
-
-
+        </div>
   </main>
 
   

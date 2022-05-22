@@ -39,8 +39,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             <div class="col-sm-12 text-center">
                 <form action="fin" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="text"  id="jugador" name="jugador" value="">
-                <input type="text"  id="puntos" name="puntos" value="">
+                <input type="hidden"  id="jugador" name="jugador" value="">
+                <input type="hidden"  id="puntos" name="puntos" value="">
                 <button id="terminar" type="submit" class="btn btn-dark opcion"> TERMINAR PARTIDA</button>
                 </form>
                 

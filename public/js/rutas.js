@@ -22,13 +22,13 @@ function info(){
     window.open("info","_self")
 }
 
-function pantallaJuego(categoria){
-    let modo=localStorage.getItem('modo');
 
-    if(modo=='facil'){
-        window.open('facil/'+categoria,'_self')
-    }else{
-        window.open('dificil/'+categoria,'_self')
-    }
 
+/**
+ * FUNCION AUXILIAR PARA PASAR MEDIANTE INPUR EL MODO ELEGIDO A PHP
+ */
+
+function modoPhp(){
+    let modoAlmacenado = localStorage.getItem('modo');
+    document.getElementById('modo').value=modoAlmacenado;
 }
