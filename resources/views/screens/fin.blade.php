@@ -18,16 +18,16 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 </head>
 
 
-<body onload="imprimeUsuario();grabarPartida()">
+<body onload="imprimeUsuario();grabarPartida();">
 <div class="container-fluid">
 
 
     {{-- HEADER --}}  
     <header>
     <div class="row text-center">
-    <h1>¡Fin de la partida!</h1>
-    <div class="col-12">Enhorabuena <span id="campoJugador"></span></div>
-    <div  class="col-12">Has obtenido un total de <span id="campoPuntos"></span> puntos</div>
+    <h1 style="font-size: 6vw;">¡Fin de la partida!</h1>
+    <div class="col-12" style="margin-top:5%; text-transform: uppercase;">Enhorabuena <span id="campoJugador"></span></div>
+    <div  class="col-12" style="margin-top:1%; text-transform: uppercase;">Has obtenido un total de <span id="campoPuntos"></span> puntos</div>
     </div>
     </header>
 
@@ -35,27 +35,27 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     {{-- SECCION PRINCIPAL --}}
     
     <main>
-        <div class="row mx-auto" id="columna1">
+        <div class="row mx-auto" id="columna1"style="margin-bottom:25%;">
             <div class="col-sm-12 text-center">
                 <form action="fin" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden"  id="jugador" name="jugador" value="">
                 <input type="hidden"  id="puntos" name="puntos" value="">
-                <button id="terminar" type="submit" class="btn btn-dark opcion"> TERMINAR PARTIDA</button>
+                <button id="terminar" type="submit" class="btn btn-dark opcion";> TERMINAR PARTIDA</button>
                 </form>
                 
             </div>  
         </div>
     </main>
 
-{{-- FOOTER --}}
+{{-- FOOTER
 <div class="row text-center mx-auto">
     <div class="col-sm-12">
     <footer>
        <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
     </footer>
  </div>
- </div>
+ </div> --}}
 
 {{-- PARTE SCRIPTS --}}
 

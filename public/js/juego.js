@@ -39,6 +39,28 @@ function imprimeUsuario(){
 
 
 /**
+ * FUNCION PARA REPRODUCIR SONIDOS
+ * @param {*} origen 
+ */
+
+
+function sonido(origen){
+    switch(origen){
+        case "acierto":
+            const music2 = new Audio('sonidos/acierto.mp3');
+                music2.play();
+            break;
+
+        case "fallo":
+                const music3 = new Audio('sonidos/incorrecto.mp3');
+                    music3.play();
+                break;
+    }
+
+}
+
+
+/**
  * FUNCION PARA VALIDAR EL MODO DIFICIL
  */
 
@@ -52,16 +74,24 @@ let ronda =localStorage.getItem('ronda');
 respuesta = respuesta.toLowerCase();
 
 if (respuesta==correcta){
-        
+    sonido('acierto');
     suma= Number(puntos)+ 100;
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
+
+    setTimeout(function(){
     alert('¡Respuesta Correcta!');
+    },30);
+  
 
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
 
+    
     window.open("dificil","_self")
+        
+
+   
 
     if(ronda==10){
     suma= Number(puntos)+ 100;
@@ -72,7 +102,11 @@ if (respuesta==correcta){
    
     }
 }else{
-    alert('Oh...¡Has fallado!');
+    sonido('fallo');
+    setTimeout(function(){
+            alert('Oh...¡Has fallado!');
+    },10);
+
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
     window.open("dificil","_self");
@@ -117,16 +151,22 @@ let ronda =localStorage.getItem('ronda');
     respuesta = respuesta.toLowerCase();
 
         if (respuesta==correcta){
-        
+            sonido('acierto');
             suma= Number(puntos)+ 50;
             localStorage.setItem("puntos",suma);
             document.getElementById('campoPuntos').innerHTML=suma;
-            alert('¡Respuesta Correcta!');
+
+            setTimeout(function(){
+                alert('¡Respuesta Correcta!');
+            },100);
+            
 
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
 
             window.open("facil","_self")
+
+            
 
             if(ronda==10){
             suma= Number(puntos)+ 50;
@@ -137,7 +177,11 @@ let ronda =localStorage.getItem('ronda');
            
             }
         }else{
-            alert('Oh...¡Has fallado!');
+            sonido('fallo');
+            setTimeout(function(){
+                alert('Oh...¡Has fallado!');
+            },40);
+            
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
             window.open("facil","_self");
@@ -161,5 +205,7 @@ function grabarPartida(){
     document.getElementById('jugador').value=jugador;
     document.getElementById('puntos').value=puntos;
 }
+
+
 
 
