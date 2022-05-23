@@ -45,7 +45,6 @@ function imprimeUsuario(){
 function validacionDificil(){
 let correcta = document.getElementById('respuestaCorrecta').value;
 let modo = localStorage.getItem('modo');
-let categoria = document.getElementById('categoria').value;
 let respuesta= document.getElementById('respuesta').value;
 let puntos = localStorage.getItem('puntos');
 let ronda =localStorage.getItem('ronda');
@@ -53,35 +52,36 @@ let ronda =localStorage.getItem('ronda');
 respuesta = respuesta.toLowerCase();
 
 if (respuesta==correcta){
-    alert('¡Respuesta Correcta!');
+        
     suma= Number(puntos)+ 100;
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
-    
+    alert('¡Respuesta Correcta!');
+
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
 
-    window.open(categoria,"_self")
+    window.open("dificil","_self")
 
     if(ronda==10){
     suma= Number(puntos)+ 100;
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
-    window.open("../fin","_self")
-    
+    window.open("fin","_self")
+
+   
     }
 }else{
     alert('Oh...¡Has fallado!');
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
-    window.open(categoria,"_self")
+    window.open("dificil","_self");
 
     if(ronda==10){
-        alert('El juego ha terminado. Has obtenido '+puntos+' puntos')
-        window.open("../fin","_self")
-        
+        window.open("fin","_self");
         }
 }
+
 
 }
 
@@ -94,7 +94,6 @@ if (respuesta==correcta){
 function validacion(numero){
 let correcta = document.getElementById('respuestaCorrecta').value;
 let modo = localStorage.getItem('modo');
-let categoria = document.getElementById('categoria').value;
 let respuesta= '';
 let puntos = localStorage.getItem('puntos');
 let ronda =localStorage.getItem('ronda');
@@ -133,8 +132,7 @@ let ronda =localStorage.getItem('ronda');
             suma= Number(puntos)+ 50;
             localStorage.setItem("puntos",suma);
             document.getElementById('campoPuntos').innerHTML=suma;
-            alert('El juego ha terminado. Has obtenido '+suma+' puntos')
-            window.open("../fin","_self")
+            window.open("fin","_self")
 
            
             }
@@ -145,8 +143,7 @@ let ronda =localStorage.getItem('ronda');
             window.open("facil","_self");
 
             if(ronda==10){
-                alert('El juego ha terminado. Has obtenido '+puntos+' puntos');
-                window.open("../fin","_self");
+                window.open("fin","_self");
                 }
         }
     

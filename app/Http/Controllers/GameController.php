@@ -19,22 +19,27 @@ class GameController extends Controller
         return view('screens/categoria');
     }
 
+    /**
+     * FUNNCION PARA  CREAR EL ARRAY DE LA PARTIDA
+     */
+
     
     public function crearCancionesPartida(Request $request){
         session_start();
 
         $categoria=$request->categoria;
 
-         $arrayCancionesCategoria=[];
-         $objeto= DB::table('canciones')
+        
+         $canciones= DB::table('canciones')
          ->where('categoria', $categoria)
          ->inRandomOrder()
          ->take(10)
          ->get();
 
-         $arrayCancionesCategoria= (array)$objeto;
+         $arrayCancionesCategoria= $canciones;
       
-         $_SESSION ['arrayGuardado'] = $arrayCancionesCategoria;
+         $_SESSION ['arrayGuardado[]'] = $arrayCancionesCategoria;
+         $_SESSION ['track'] = 0;
 
 
           if($request->modo=="facil"){
@@ -47,20 +52,29 @@ class GameController extends Controller
     }
 
 
+    /**
+     * FUNCION DEL JUEGO EN MODO DIFICIL
+     */
+
     public function dificil(){
 
         session_start();
 
-        $cancionesPartida =$_SESSION ['arrayGuardado'];
+        $cancionesPartida = $_SESSION ['arrayGuardado[]'];
+        $numero = $_SESSION ['track'];
 
-        $random = rand(0, 9);
+        if($numero<10){
+
         $cancionActual= new Cancione;
-        $cancionActual = $cancionesPartida[$random];
+        $cancionActual = $cancionesPartida[$numero];
 
-        unset($cancionesPartida[0]);
-        $_SESSION ['arrayGuardado']= $cancionesPartida;
-        
-    return view('screens/dificil',['cancionActual'=>$cancionActual]);
+        $_SESSION ['track']= (int)$numero+1;
+
+        return view('screens/dificil',['cancionActual'=>$cancionActual]);
+
+        }else{
+            return view('screens/fin');
+        }
     }
     
 /**
@@ -69,26 +83,26 @@ class GameController extends Controller
      public function facil(){
         session_start();
 
-      
-        $cancionesPartida = $_SESSION ['arrayGuardado'];
-    
+        $cancionesPartida = $_SESSION ['arrayGuardado[]'];
+        $numero = $_SESSION ['track'];
+
+        if($numero<10){
+
         $cancionActual= new Cancione;
-        //$cancionActual = $cancionesPartida[1];
+        $cancionActual = $cancionesPartida[$numero];
 
-        //unset($cancionesPartida[0]);
-        //array_values($cancionesPartida); 
-        //$_SESSION ['arrayGuardado']= $cancionesPartida;
+        $_SESSION ['track']= (int)$numero+1;
 
+        $opciones = DB::table('opciones')
+        ->where('id_cancion', $cancionActual->id)
+        ->inRandomOrder()
+        ->get();
 
-        // $opciones = DB::table('opciones')
-        // ->where('id_cancion', $cancionActual->id)
-        // ->inRandomOrder()
-        // ->get();
-        
+        return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
 
-        // DEVUELVE OBJETO Y NECESITO UN ARRAY
-          return gettype($cancionesPartida);
-        //return view('screens/facil',['cancionActual'=>$cancionActual],['opciones' => $opciones]);
+        }else{
+            return view('screens/fin');
+        }
      }
 
 
