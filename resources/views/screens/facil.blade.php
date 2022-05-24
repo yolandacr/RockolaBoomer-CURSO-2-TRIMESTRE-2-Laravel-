@@ -60,13 +60,13 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     </main>
 
 {{-- FOOTER --}}
-<div class="row text-center mx-auto">
+{{-- <div class="row text-center mx-auto">
     <div class="col-sm-12">
     <footer>
        <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
     </footer>
  </div>
- </div>
+ </div> --}}
 
 {{-- PARTE SCRIPTS --}}
 
