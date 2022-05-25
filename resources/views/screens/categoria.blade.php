@@ -38,14 +38,14 @@
                 <form action="categoria" method="POST">
                   @csrf
                   <input type="hidden" value="años80" id="años80" name="categoria">
-                  <input type="hidden"value="" id="modo" name="modo">
+                  <input type="hidden" value=""  name="modo" id="modoAños80" class="modo">
                   <button type="submit" class="btn btn-dark categoria">AÑOS 80</button>
                 </form>
               
                 <form action="categoria" method="POST" >
                   @csrf
                   <input type="hidden" value="años90" id="años90" name="categoria">
-                  <input type="hidden"value="" id="modo" name="modo">
+                  <input type="hidden"  name="modo" id="modoAños90" class="modo">
                   <button type="submit" class="btn btn-dark categoria">AÑOS 90</button>
                 </form>
               </div>
@@ -55,14 +55,14 @@
               <form action="categoria" method="POST">
                 @csrf
                 <input type="hidden"  value="años2000" id="categoria" name="categoria">
-                <input type="hidden"value="" id="modo" name="modo">
+                <input type="hidden" value=""  name="modo" id="modoAños2000" class="modo">
                 <button type="submit" class="btn btn-dark categoria">AÑOS 2000</button>
               </form>
             
               <form action="categoria" method="POST">
                 @csrf
                 <input type="hidden" value="actualidad" id="actualidad" name="categoria">
-                <input type="hidden"value="" id="modo" name="modo">
+                <input type="hidden" value="" name="modo" id="modoActualidad" class="modo">
                 <button type="submit" class="btn btn-dark categoria">ACTUALIDAD</button>
               </form>
             </div>

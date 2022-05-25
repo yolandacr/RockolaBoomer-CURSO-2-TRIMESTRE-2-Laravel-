@@ -29,6 +29,9 @@ function info(){
  */
 
 function modoPhp(){
-    let modoAlmacenado = localStorage.getItem('modo');
-    document.getElementById('modo').value=modoAlmacenado;
+    let modoAlmacenado=localStorage.getItem('modo');
+    const inputsModo = document.getElementsByClassName("modo");
+    for (let i = 0; i < inputsModo.length; i++) {
+        inputsModo[i].value = modoAlmacenado;
+        }
 }

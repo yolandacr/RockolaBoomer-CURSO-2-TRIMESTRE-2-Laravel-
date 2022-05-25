@@ -28,6 +28,7 @@ class GameController extends Controller
         session_start();
 
         $categoria=$request->categoria;
+        $modo =$request->modo;
 
         
          $canciones= DB::table('canciones')

@@ -43,17 +43,18 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     
     <main style="">
         <div class="row text-center" >
-            <div class="col-12">
-            <h1>¿Título de la canción?</h1>
+            <div class="col-12 text-center">
+            <h1 style="font-size:4vw;margin-top:-5%;">¿Título de la canción?</h1>
             <input type="hidden" value="{{ $cancionActual -> nombre }}" id="respuestaCorrecta">
             <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
             </div>
         </div>
 
-        <div class="row text-center" style="margin-top:3%;font-size:1.5rem;">
-            <div class="col-12">
-                    <label for="respuesta"> Tu respuesta:</label>
-                    <input type="text" id="respuesta" value="">
+        <div class="row text-center" style="margin-top:4%;">
+            <div class="col-6 mx-auto">
+                    <label for="respuesta" style="font-size:2vw;"> Tu respuesta:</label>
+                    <input type="text" style="width:40vw;font-size:2vw;"id="respuesta" value="" placeholder="Escribe tu respuesta aquí..."><br>
+                    <span style="background-color:black;color:red;font-size:1vw;">Escribe tu respuesta con las correspondientes tildes y comillas</span><br>
                     <button type="button" class="btn btn-primary enviar" onclick="validacionDificil();">Enviar</button>
             </div>
         </div>
