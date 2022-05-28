@@ -1,11 +1,13 @@
+/**
+ * EN ESTE ARCHIVO ESTÁN TODOS LOS MÉTODOS DE JAVASCRIPT RELATIVOS AL JUEGO Y SU LÓGICA QUE SIRVEN DE APOYO A LOS CONTROLADORES.
+ */
+
 var jugador;
 var fecha;
 var modo;
 
 
-// ESTA PARTE ES DE FUNCIONES QUE GUARDAN Y RECUPERAN DEL LOCALSTORAGE
-
-
+// ESTA PARTE ES DE FUNCIONES QUE GUARDAN Y RECUPERAN DEL LOCALSTORAGE EL MODO/NIVEL DE JUEGO.
 function guardarModo(string){
 if(string=='facil'){
     localStorage.setItem("modo",'facil');
@@ -16,6 +18,10 @@ if(string=='facil'){
      window.open("categoria","_self")
 }
 
+/**
+ * ESTA FUNCIÓN  RESCATA LO QUE HAY ALMACENADO EN LA VARIABLE USUARIO EN EL LOCALSTORAGE,
+ * INICIA LOS PUNTOS A 0, LA RONDA A 1 Y DIBUJA LOS DATOS NECESARIOS EN LA VISTA.
+ */
 
 function guardaUsuario(){
    jugador=document.getElementById("usuario").value;
@@ -24,10 +30,8 @@ function guardaUsuario(){
    let ronda=localStorage.setItem('ronda',Number(1));
 }
 
-
-
 /**
- * FUNCION PINTA NOMBRE DE USUARIO EN LA PANTALLA DE JUEGO
+ * FUNCION PINTA NOMBRE DE USUARIO EN LA PANTALLA DE JUEGO JUNTO CON LOS PUNTOS
  */
 
 function imprimeUsuario(){
@@ -40,9 +44,8 @@ function imprimeUsuario(){
 
 /**
  * FUNCION PARA REPRODUCIR SONIDOS
- * @param {*} origen 
+ * @param {*} origen hace referencia al evento origen que llama a esta función para saber que sonido reproducir.
  */
-
 
 function sonido(origen){
     switch(origen){
@@ -56,7 +59,6 @@ function sonido(origen){
                     music3.play();
                 break;
     }
-
 }
 
 
@@ -79,19 +81,18 @@ if (respuesta==correcta){
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
 
-    setTimeout(function(){
-    alert('¡Respuesta Correcta!');
-    },30);
+    Swal.fire({
+        icon: 'success',
+        title:'¡Respuesta correcta!',
+        text: '+100 puntos',
+        confirmButtonText: 'Continuar',
+         }).then(function() {
+            window.location = "dificil";
+        });
   
 
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
-
-    
-    window.open("dificil","_self")
-        
-
-   
 
     if(ronda==10){
     suma= Number(puntos)+ 100;
@@ -103,26 +104,27 @@ if (respuesta==correcta){
     }
 }else{
     sonido('fallo');
-    setTimeout(function(){
-            alert('Oh...¡Has fallado!');
-    },10);
+    Swal.fire({
+        icon: 'error',
+        title:'Oh...¡Has fallado!',
+        confirmButtonText: 'Continuar',
+         }).then(function() {
+            window.location = "dificil";
+        });
 
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
-    window.open("dificil","_self");
 
     if(ronda==10){
         window.open("fin","_self");
         }
 }
-
-
 }
 
 
 /**
  * FUNCION PARA VALIDAR LA RESPUESTA EN EL JUEGO FÁCIL
- * @param {*} numero 
+ * @param {*} numero hace referencia al número de opción/botón pulsado.
  */
 
 function validacion(numero){
@@ -156,17 +158,17 @@ let ronda =localStorage.getItem('ronda');
             localStorage.setItem("puntos",suma);
             document.getElementById('campoPuntos').innerHTML=suma;
 
-            setTimeout(function(){
-                alert('¡Respuesta Correcta!');
-            },100);
-            
-
+                Swal.fire({
+                    icon: 'success',
+                    title:'¡Respuesta correcta!',
+                    text: '+50 puntos',
+                    confirmButtonText: 'Continuar',
+                     }).then(function() {
+                        window.location = "facil";
+                    });
+                  
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
-
-            window.open("facil","_self")
-
-            
 
             if(ronda==10){
             suma= Number(puntos)+ 50;
@@ -178,13 +180,17 @@ let ronda =localStorage.getItem('ronda');
             }
         }else{
             sonido('fallo');
-            setTimeout(function(){
-                alert('Oh...¡Has fallado!');
-            },40);
+
+            Swal.fire({
+                icon: 'error',
+                title:'Oh...¡Has fallado!',
+                confirmButtonText: 'Continuar',
+                 }).then(function() {
+                    window.location = "facil";
+                });
             
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
-            window.open("facil","_self");
 
             if(ronda==10){
                 window.open("fin","_self");
@@ -205,7 +211,3 @@ function grabarPartida(){
     document.getElementById('jugador').value=jugador;
     document.getElementById('puntos').value=puntos;
 }
-
-
-
-

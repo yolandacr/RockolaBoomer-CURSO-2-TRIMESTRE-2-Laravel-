@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Request para gestionar el registro
+ */
+
 class RegistroRequest extends FormRequest
 {
     /**
@@ -28,6 +32,4 @@ class RegistroRequest extends FormRequest
             'clave' => 'required|min:8|max:16'
         ];
     }
-
-    
 }

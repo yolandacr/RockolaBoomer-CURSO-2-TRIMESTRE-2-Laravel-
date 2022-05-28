@@ -36,7 +36,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
-  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.min.css" rel="stylesheet"/>
+  <title>Inicio</title>
 </head>
 
 <body>
@@ -90,19 +91,23 @@
     <!-- fondo para que no se interactue con lo ue ha detras. Ventana Modal cookies-->
     <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      var msg = '{{Session::get("alert")}}';
       var exist = '{{Session::has("alert")}}';
       if (exist) {
-          alert(msg);
+        Swal.fire({
+            icon: 'success',
+            title:'Usuario registrado con éxito',
+             }).then(function() {
+                window.location = 'index';
+            });
       }
   </script>
     <script src="js/rutas.js"></script>
     <script src="js/aviso-cookies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+  </script>
+   
 </body>
 
 </html>

@@ -7,6 +7,7 @@
 <title>Partida Fácil</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.min.css" rel="stylesheet"/>
 <link href="{{asset('css/opciones.css')}}" rel="stylesheet" />
 <link href="{{asset('css/facil.css')}}" rel="stylesheet" />
  {{-- PROBANDO FUENTES --}}
@@ -46,8 +47,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
        <input type="hidden" value="{{$cancionActual -> categoria}}" id="categoria">
         <div class="row mx-auto" id="columna1">
             <div class="col-sm-6 text-center">
-                <button id="boton1" type="button" class="btn btn-dark opcion" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
-                <button id="boton2" type="button" class="btn btn-dark opcion derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
+                <button id="boton1" type="button" class="btn btn-dark boton opcion" value="{{$opciones[0] -> nombre}}" onclick="validacion(1)">{{$opciones[0] -> nombre}}</button><br>
+                <button id="boton2" type="button" class="btn btn-dark boton opcion derecha"  value="{{$opciones[1] -> nombre}}" onclick="validacion(2)">{{$opciones[1] -> nombre}}</button>
    
             </div> 
 
@@ -76,5 +77,6 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 </div>
 <script src="js/juego.js"></script>
 <script src="js/rutas.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

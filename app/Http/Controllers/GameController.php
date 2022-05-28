@@ -26,7 +26,6 @@ class GameController extends Controller
     
     public function crearCancionesPartida(Request $request){
         session_start();
-
         $categoria=$request->categoria;
         $modo =$request->modo;
 
@@ -49,7 +48,6 @@ class GameController extends Controller
          }else{
             return redirect('dificil');
           }
-
     }
 
 
@@ -79,7 +77,7 @@ class GameController extends Controller
     }
     
 /**
- * FUNCION PARA EL JUEGO FÁCIL
+ * FUNCIÓN PARA EL JUEGO FÁCIL
  */
      public function facil(){
         session_start();
@@ -106,12 +104,16 @@ class GameController extends Controller
         }
      }
 
-
+     /**
+      *  FUNCION PARA LA PÁGINA DE FIN DE PARTIDA
+      */
      public function fin(){
         return view('screens/fin');
      }
 
-
+    /**
+     * MÉTODO PARA GRABAR LA PARTIDA TERMINADA
+     */
      public function grabar(Request $request){
         $partida = new Partida;
         $partida->nombre_usuario = $request->jugador;
@@ -119,10 +121,5 @@ class GameController extends Controller
         $partida->save();
 
        return redirect('ranking');
-
      }
-
-     
-
-   
 }

@@ -19,7 +19,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * metodo que guarda el registro en db
+     * metodo que guarda el registro en dd.
      */
     public function store(RegistroRequest $request)
     {
@@ -29,7 +29,16 @@ class UsuarioController extends Controller
         $usuario->clave = $claveHash;
         $usuario->save();
 
+        $alert= "<script>
+        Swal({
+            icon: 'success',
+            title:'Usuario registrado con éxito',
+             }).then(function() {
+                window.location = 'index';
+            });
+        </script>";
 
+        
         return redirect('index')->with('alert', 'Usuario registrado con éxito');
     }
 
@@ -61,7 +70,5 @@ class UsuarioController extends Controller
         return back()->withErrors([
             'nombre' => 'El usuario o clave son incorrectos',
         ])->onlyInput('nombre');
-    } 
-
-    
+    }  
 }
