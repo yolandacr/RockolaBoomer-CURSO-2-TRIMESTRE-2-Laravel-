@@ -76,47 +76,46 @@ let ronda =localStorage.getItem('ronda');
 respuesta = respuesta.toLowerCase();
 
 if (respuesta==correcta){
-    sonido('acierto');
+
     suma= Number(puntos)+ 100;
     localStorage.setItem("puntos",suma);
     document.getElementById('campoPuntos').innerHTML=suma;
-
-    Swal.fire({
-        icon: 'success',
-        title:'¡Respuesta correcta!',
-        text: '+100 puntos',
-        confirmButtonText: 'Continuar',
-         }).then(function() {
-            window.location = "dificil";
-        });
-  
-
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
 
     if(ronda==10){
-    suma= Number(puntos)+ 100;
-    localStorage.setItem("puntos",suma);
-    document.getElementById('campoPuntos').innerHTML=suma;
-    window.open("fin","_self")
-
-   
+        suma= Number(puntos)+ 100;
+        localStorage.setItem("puntos",suma);
+        document.getElementById('campoPuntos').innerHTML=suma;
+        window.open("fin","_self")
+        }
+    else{
+        sonido('acierto');
+        Swal.fire({
+            icon: 'success',
+            title:'¡Respuesta correcta!',
+            text: '+100 puntos',
+            confirmButtonText: 'Continuar',
+             }).then(function() {
+                window.location = "dificil";
+            });    
     }
 }else{
-    sonido('fallo');
-    Swal.fire({
-        icon: 'error',
-        title:'Oh...¡Has fallado!',
-        confirmButtonText: 'Continuar',
-         }).then(function() {
-            window.location = "dificil";
-        });
-
     sumaRonda = Number(ronda)+ 1;
     localStorage.setItem('ronda',sumaRonda);
 
     if(ronda==10){
         window.open("fin","_self");
+        }
+    else{
+        sonido('fallo');
+        Swal.fire({
+            icon: 'error',
+            title:'Oh...¡Has fallado!',
+            confirmButtonText: 'Continuar',
+             }).then(function() {
+                window.location = "dificil";
+            });
         }
 }
 }
@@ -153,11 +152,21 @@ let ronda =localStorage.getItem('ronda');
     respuesta = respuesta.toLowerCase();
 
         if (respuesta==correcta){
-            sonido('acierto');
+
             suma= Number(puntos)+ 50;
             localStorage.setItem("puntos",suma);
             document.getElementById('campoPuntos').innerHTML=suma;
+            sumaRonda = Number(ronda)+ 1;
+            localStorage.setItem('ronda',sumaRonda);
 
+            if(ronda==10){
+                suma= Number(puntos)+ 50;
+                localStorage.setItem("puntos",suma);
+                document.getElementById('campoPuntos').innerHTML=suma;
+                window.open("fin","_self")
+                }
+            else{
+                sonido('acierto');
                 Swal.fire({
                     icon: 'success',
                     title:'¡Respuesta correcta!',
@@ -166,38 +175,27 @@ let ronda =localStorage.getItem('ronda');
                      }).then(function() {
                         window.location = "facil";
                     });
-                  
-            sumaRonda = Number(ronda)+ 1;
-            localStorage.setItem('ronda',sumaRonda);
-
-            if(ronda==10){
-            suma= Number(puntos)+ 50;
-            localStorage.setItem("puntos",suma);
-            document.getElementById('campoPuntos').innerHTML=suma;
-            window.open("fin","_self")
-
-           
             }
-        }else{
-            sonido('fallo');
-
-            Swal.fire({
-                icon: 'error',
-                title:'Oh...¡Has fallado!',
-                confirmButtonText: 'Continuar',
-                 }).then(function() {
-                    window.location = "facil";
-                });
             
+        }else{
             sumaRonda = Number(ronda)+ 1;
             localStorage.setItem('ronda',sumaRonda);
 
             if(ronda==10){
                 window.open("fin","_self");
                 }
+            else{
+                sonido('fallo');
+
+                Swal.fire({
+                    icon: 'error',
+                    title:'Oh...¡Has fallado!',
+                    confirmButtonText: 'Continuar',
+                     }).then(function() {
+                        window.location = "facil";
+                    });
+            }
         }
-    
-    
 }
 
 /**
