@@ -16,6 +16,8 @@ class A90Seeder extends Seeder
      */
     public function run()
     {
+
+        //cancion 1-10
         $cancion1 = new Cancione();
         $cancion1->nombre = "me quedaré solo";
         $cancion1->categoria = "AÑOS90";
@@ -76,6 +78,8 @@ class A90Seeder extends Seeder
         $cancion10->ruta = "sonidos/AÑOS90/moon.wav";
         $cancion10-> save();
 
+
+        //CANCION 11-20
         $cancion11 = new Cancione();
         $cancion11->nombre = "te pertenezco";
         $cancion11->categoria = "AÑOS90";
@@ -136,6 +140,8 @@ class A90Seeder extends Seeder
         $cancion20->ruta = "sonidos/AÑOS90/pausini.wav";
         $cancion20-> save();
 
+
+        //CANCION 21-30
         $cancion21 = new Cancione();
         $cancion21->nombre = "ella";
         $cancion21->categoria = "AÑOS90";
