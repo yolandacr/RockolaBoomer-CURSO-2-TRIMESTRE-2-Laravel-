@@ -51,7 +51,7 @@
    <div class="row text-center mx-auto" >
     <div class="col-sm-12" >
     <footer>
-       <button type="button" class="btn btn-primary atras" onclick="atras();">ATRÁS</button>
+       <button type="button" class="btn btn-primary atras" onclick="inicio();">ATRÁS</button>
     </footer>
  </div>
  </div>
