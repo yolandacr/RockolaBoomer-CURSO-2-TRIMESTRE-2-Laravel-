@@ -41,3 +41,5 @@ Route::get('dificil', [GameController::class,'dificil']);
 
 Route::get('fin', [GameController::class,'fin']);
 Route::post('fin', [GameController::class,'grabar']);
+
+Route::get ('logout', [UsuarioController::class,'logout']);

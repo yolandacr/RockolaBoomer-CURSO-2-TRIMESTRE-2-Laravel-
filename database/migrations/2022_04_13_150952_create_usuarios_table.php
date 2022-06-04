@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre')->unique();
             $table->string('clave');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

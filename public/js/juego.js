@@ -208,4 +208,7 @@ function grabarPartida(){
 
     document.getElementById('jugador').value=jugador;
     document.getElementById('puntos').value=puntos;
+
+    localStorage.setItem('puntos',0);
+    localStorage.setItem('ronda',1);
 }

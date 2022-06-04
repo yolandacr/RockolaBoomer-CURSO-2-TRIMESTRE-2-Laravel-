@@ -1,8 +1,16 @@
 /**
- * FUNCIÓN PARA I A LA PÁGINA ANTERIOS
+ * FUNCIÓN PARA I A LA PÁGINA ANTERIOR
  */
 function atras(){
     history.back();
+}
+
+/**
+ * FUNCION PARA IR AL MODO
+ */
+
+function modo(){
+    window.open("modo","_self")
 }
 
 /**

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Session;
 
 class UsuarioController extends Controller
 {
@@ -56,6 +57,7 @@ class UsuarioController extends Controller
 
     public function authenticate(Request $request)
     {
+        
         $credentials = $request->validate([
             'nombre' => ['required'],
             'clave' => ['required'],
@@ -63,7 +65,6 @@ class UsuarioController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
             return redirect()->route('screens.modo');
         }
  
@@ -71,4 +72,15 @@ class UsuarioController extends Controller
             'nombre' => 'El usuario o clave son incorrectos',
         ])->onlyInput('nombre');
     }  
+
+
+    /**
+     * FUNCIÓN PARA CERRAR LA SESIÓN
+     */
+
+    public function logout(Request $request){
+    Session::flush();
+    Auth::logout();
+    return redirect('index');
+}
 }

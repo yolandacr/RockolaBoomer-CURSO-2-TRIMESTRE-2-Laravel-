@@ -59,6 +59,19 @@
       <source src="sonidos/intro.wav" type="audio/wav">
       Tu navegador no es compatible con el audio de la web
     </audio>
+
+    @if (Auth::check()) 
+      <div style="float:right;margin:1.5%;font-family: 'Gloria Hallelujah', cursive;">
+        <form action="logout" method="get">
+          Bienvenid@ {{ auth()->user()->nombre }}
+          <br><button type="submit" class="logout">CERRAR SESIÓN</button>
+        </form>
+       </div>
+      
+    @endif
+
+    
+    
   </header>
 
   <main class="mainHome">
@@ -71,7 +84,11 @@
 
     <!-- BOTONES -->
     <div class="container">
+      @if (Auth::check()) 
+      <p><button type="button" class="btn btn-dark" onclick="modo()">JUGAR</button></p>
+      @else
       <p><button type="button" class="btn btn-dark" onclick="login()">LOGIN</button></p>
+      @endif
       <p><button type="button" class="btn btn-dark" onclick="registro()">REGISTRO</button></p>
       <p><button type="button" class="btn btn-dark" onclick="ranking()">RANKING</button></p>
       <p><button type="button" class="btn btn-dark" onclick="info()">+INFO</button></p>

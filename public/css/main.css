@@ -175,6 +175,20 @@ audio {
     border-color:#76118a ;
 }
 
+.logout{
+padding:2%;
+background-color:transparent;
+color:white;
+border-color:#ac4295;
+margin:3%;
+}
+
+.logout:hover{
+    color: #fff;
+    background-color: #76118a;
+    border-color:#76118a ;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-device-width: 270px) and (max-device-width: 480px) and (orientation: portrait) {
